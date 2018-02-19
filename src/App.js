@@ -23,6 +23,8 @@ class App extends Component {
 
 
     exampleApiCall = (e) => {
+        console.log("calling api")
+
         axios.get('/api', {
             text: 'api'
         })

@@ -14,11 +14,10 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
-app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/', router);
-
+app.use(cors());
 
 router.get('/', (req, res) => {
     res.send('hello world');
@@ -45,15 +44,18 @@ router.post('/text', (req, res)=> {
 
 router.get('/api', (req, res) => {
     console.log("fetching example data with authenticated user in Onet Database")
+    var output = ''
     fetch('https://services.onetcenter.org/ws/mnm/careers/13-2011.01/skills', { 
-        headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ=='},
+        headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ==', 'accept': 'application/json'},
         })
         .then(res => {
             res.json()
-            .then(json => console.log(json))
-        });
-    res.send('haha');
+            .then(json => output = json)
+        })
+    res.send(output)
 })
+
+
 
 
 mongoose.connect('mongodb://localhost/teamf', function(err) {
