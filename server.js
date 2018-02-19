@@ -42,20 +42,24 @@ router.post('/text', (req, res)=> {
     })
 })
 
+
+
+
+
 router.get('/api', (req, res) => {
     console.log("fetching example data with authenticated user in Onet Database")
-    var output = ''
+
     fetch('https://services.onetcenter.org/ws/mnm/careers/13-2011.01/skills', { 
         headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ==', 'accept': 'application/json'},
         })
         .then(res => {
             res.json()
-            .then(json => output = json)
-        })
-    res.send(output)
+            .then(json => {
+                console.log(json)
+            })
+        });
+    res.send("got api call!")
 })
-
-
 
 
 mongoose.connect('mongodb://localhost/teamf', function(err) {
