@@ -3,7 +3,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import fetch from 'node-fetch';
 
 
 
@@ -13,6 +12,8 @@ class App extends Component {
         this.key = 1;
         this.state = { text: '' };
         this.updateText = this.updateText.bind(this);
+        this.submitText = this.submitText.bind(this);
+        this.exampleApiCall = this.exampleApiCall.bind(this);
     }
 
 
@@ -21,16 +22,13 @@ class App extends Component {
     }
 
 
-    exampleApiCall() {
-        var jsontext = ''
-        console.log("fetching example data with authenticated user in Onet Database")
-        fetch('https://services.onetcenter.org/ws/mnm/careers/13-2011.01/skills', { 
-            headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ=='},
-            })
-            .then(res => res.json())
-            .then(json => console.log(json));
-
-            return jsontext
+    exampleApiCall = (e) => {
+        axios.get('/api', {
+            text: 'api'
+        })
+        .then(function(res) {
+            console.log(res);
+        })
     }
 
     submitText = (e) => {
@@ -62,7 +60,11 @@ class App extends Component {
                         primary={true}
                         onClick={this.submitText} 
                     />
-                    {this.exampleApiCall()}
+                    <FlatButton
+                        label="API Call"
+                        primary={true}
+                        onClick={this.exampleApiCall}
+                    />
                 </div>
             </MuiThemeProvider>
         );

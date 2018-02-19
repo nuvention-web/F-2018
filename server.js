@@ -3,9 +3,11 @@ var express = require ('express');
 var bodyParser = require ('body-parser');
 var Textinput = require ('./models/textinput');
 var mongoose = require ('mongoose');
-var cors = require('cors')
+var fetch = require ('node-fetch');
+var cors = require('cors');
 const router = express.Router();
 const app = express();
+
 
 
 app.use(function(req, res, next) {
@@ -39,6 +41,18 @@ router.post('/text', (req, res)=> {
     .catch(err => {
         res.status(400).send('unable to save to database');
     })
+})
+
+router.get('/api', (req, res) => {
+    console.log("fetching example data with authenticated user in Onet Database")
+    fetch('https://services.onetcenter.org/ws/mnm/careers/13-2011.01/skills', { 
+        headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ=='},
+        })
+        .then(res => {
+            res.json()
+            .then(json => console.log(json))
+        });
+    res.send('haha');
 })
 
 
