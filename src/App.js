@@ -3,6 +3,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
+import fetch from 'node-fetch';
+
 
 
 class App extends Component {
@@ -16,6 +18,19 @@ class App extends Component {
 
     updateText = (e, value) => {
         this.setState({ text: [value] });
+    }
+
+
+    exampleApiCall() {
+        var jsontext = ''
+        console.log("fetching example data with authenticated user in Onet Database")
+        fetch('https://services.onetcenter.org/ws/mnm/careers/13-2011.01/skills', { 
+            headers: { 'Authorization': 'Basic c3RpbGxfdW5kZXJfY29uc3RydWM6NzI4MnJjeQ=='},
+            })
+            .then(res => res.json())
+            .then(json => console.log(json));
+
+            return jsontext
     }
 
     submitText = (e) => {
@@ -47,6 +62,7 @@ class App extends Component {
                         primary={true}
                         onClick={this.submitText} 
                     />
+                    {this.exampleApiCall()}
                 </div>
             </MuiThemeProvider>
         );

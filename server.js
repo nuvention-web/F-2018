@@ -3,7 +3,7 @@ var express = require ('express');
 var bodyParser = require ('body-parser');
 var Textinput = require ('./models/textinput');
 var mongoose = require ('mongoose');
-
+var cors = require('cors')
 const router = express.Router();
 const app = express();
 
@@ -12,7 +12,9 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
+app.use(cors());
 app.use(bodyParser.json());
+
 app.use('/', router);
 
 
