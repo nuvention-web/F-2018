@@ -2,6 +2,8 @@
     width: 100%;
     position: fixed;
     bottom: 0px;
+    height: 100%;
+    background-size: cover;
 }
 
 img {
@@ -9,4 +11,34 @@ img {
     margin: auto;
     width: 100%;
     height: 100%;
+}
+
+.title-box {
+    text-align: center;
+    background-color: rgba(3, 3, 3, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 50%;
+}
+
+h1 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12vmax;
+}
+
+h5 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3vmax;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+hr {
+    width: 70%;
 }
