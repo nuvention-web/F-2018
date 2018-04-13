@@ -1,55 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import './nav.css';
+import TopNav from './nav';
+import Head from './intro';
 
-
-class HelloWorld extends React.Component {
-	render() {
-		return (
-		<Navbar className="nav" collapseOnSelect>
-			<Navbar.Header>
-				<Navbar.Brand>
-				<a href="#brand">Tribe?</a>
-				</Navbar.Brand>
-				<Navbar.Toggle />
-			</Navbar.Header>
-			<Navbar.Collapse>
-				<Nav>
-				<NavItem eventKey={1} href="#">
-					Link
-				</NavItem>
-				<NavItem eventKey={2} href="#">
-					Link
-				</NavItem>
-				<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-					<MenuItem eventKey={3.1}></MenuItem>
-					<MenuItem eventKey={3.2}>Another action</MenuItem>
-					<MenuItem eventKey={3.3}>Search </MenuItem>
-					<MenuItem divider />
-					<MenuItem eventKey={3.3}>Separated link</MenuItem>
-				</NavDropdown>
-				</Nav>
-				<Nav pullRight>
-				<NavItem eventKey={1} href="#">
-					Link Right
-				</NavItem>
-				<NavItem eventKey={2} href="#">
-					Link Right
-				</NavItem>
-				</Nav>
-			</Navbar.Collapse>
-			</Navbar>
-		)
-	}
-}
-
-
-
+console.log("Hello world!")
 
 
 ReactDOM.render(
-  <HelloWorld />,
+  <div>
+	  <TopNav/>
+	  <Head />
+	</div>,
   document.getElementById('root')
 );

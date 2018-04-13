@@ -1,4 +1,47 @@
 .nav {
-    background-color: lightgreen;
-    color: black;
+    background-color: #3CB54A;
+    color: white;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    margin: 0;
+    border-radius: 0%;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 200%;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+
 }

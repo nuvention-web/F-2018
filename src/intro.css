@@ -1,0 +1,12 @@
+.img-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
+img {
+    display: table;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
