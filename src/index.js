@@ -13,13 +13,14 @@ ReactDOM.render(
   <div>
 	  <TopNav/>
 	  <Head />
+		<Steps />
 	</div>,
   document.getElementById('root')
 );
 
-ReactDOM.render(
-	<div>
-		<Steps />
-	</div>,
-	document.getElementById('intro')
-)
+// ReactDOM.render(
+// 	<div>
+// 		<Steps />
+// 	</div>,
+// 	document.getElementById('root')
+// )

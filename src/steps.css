@@ -1,5 +1,56 @@
+.steps {
+    text-align: center; 
+    width: 100%;  
+}
+
+
 .intro-text {
     color: #3CB54A;
     font-family: 'Open Sans', sans-serif;
-    font-size: 100vw;
+    font-size: 5vw;
+    padding-left: 5vw;
+    text-align: left;
+}
+
+.intro-sub {
+    margin: 0 auto;
+    width: 60%;
+    font-size: 1.5vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.steps-num {
+    border: .3vh solid #3CB54A;
+    border-radius: 50%;
+    width: 3vmax;
+    height: 3vmax;
+    font-size: 2vmax;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 25vh;
+}
+
+
+
+.leftContainer {
+    display: inline-block;
+    width: 45vw;
+}
+
+.rightContainer {
+    display: inline-block;
+    width: 45vw;
+}
+
+.midContainer {
+    padding: 0;
+    display: inline-block;
+    width: 5vw;
+    color: #3CB54A;
+    margin: 0;
+    margin-top: 10vw;
 }

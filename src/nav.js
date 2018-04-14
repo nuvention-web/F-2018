@@ -6,10 +6,10 @@ import './nav.css';
 class TopNav extends React.Component {
 	render() {
 		return (
-		<Navbar className="nav" collapseOnSelect fixedTop>
+		<Navbar className="nav" collapseOnSelect fixedTop fluid>
 			<Navbar.Header>
 				<Navbar.Brand>
-				<a href="#brand">Tribe</a>
+				<a href="#brand">Tt</a>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 			</Navbar.Header>

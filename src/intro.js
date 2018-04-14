@@ -12,7 +12,7 @@ class Head extends React.Component {
     return (
       <div className="img-container" style={imageStyle}>
         <div className="title-box">
-          <h1> tribe </h1>
+          <h1> Tete </h1>
           <hr/>
           <h5> A new career is within reach.</h5>
           <h5> Let us Help you. </h5>
