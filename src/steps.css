@@ -7,15 +7,17 @@
 .intro-text {
     color: #3CB54A;
     font-family: 'Open Sans', sans-serif;
-    font-size: 5vw;
+    font-size: 5vmax;
     padding-left: 5vw;
     text-align: left;
 }
 
 .intro-sub {
     margin: 0 auto;
-    width: 60%;
-    font-size: 1.5vw;
+    margin-top: 2vmax;
+    line-height: 200%;
+    width: 80%;
+    font-size: 2vmax;
     font-family: 'Open Sans', sans-serif;
 }
 
