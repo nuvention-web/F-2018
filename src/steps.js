@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './steps.css';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+// import 'react-vertical-timeline-component/style.min.css';
 
 var spanStyle = {
   fontFamily: '\'Dosis\', sans-serif',
@@ -25,17 +27,10 @@ class Steps extends React.Component {
           because everyone's transition Tete delivers <span style={boldStyle}>personalized guidance </span> 
           by connecting you with people who have gone through a similar transition, or people who are just like you! 
         </h3>
-        <div className="leftContainer">Placeholder</div>
-        <ul className="midContainer">
-          <li className="steps-num">1</li>
-          <li className="steps-num">2</li>
-          <li className="steps-num">3</li>
-          <li className="steps-num">4</li>
-        </ul>
-        <div className="rightContainer">Placeholder</div> 
       </div>
     )
   }
+
 }
 
 export default Steps;

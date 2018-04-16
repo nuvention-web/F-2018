@@ -1,15 +1,19 @@
 .steps {
+    padding-top: 2vmax;
     text-align: center; 
     width: 100%;  
+    padding-bottom: 5vh;
+    /* height: 100vh; */
 }
 
 
 .intro-text {
-    color: #3CB54A;
+    color: #546D64;
     font-family: 'Open Sans', sans-serif;
     font-size: 5vmax;
     padding-left: 5vw;
     text-align: left;
+    margin: 0;
 }
 
 .intro-sub {
@@ -36,23 +40,10 @@ ul {
     margin-bottom: 25vh;
 }
 
+@media only screen and (min-width: 1170px) {
 
-
-.leftContainer {
-    display: inline-block;
-    width: 45vw;
 }
-
-.rightContainer {
-    display: inline-block;
-    width: 45vw;
-}
-
-.midContainer {
-    padding: 0;
-    display: inline-block;
-    width: 5vw;
-    color: #3CB54A;
-    margin: 0;
-    margin-top: 10vw;
-}
+/* 
+.vertical-timeline-element-content::before {
+    border-left-color: green !important;
+} */
