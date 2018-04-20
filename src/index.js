@@ -1,28 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './nav.css';
-import TopNav from './nav';
-import Head from './intro';
-import Steps from './steps.js'
-import Timeline from './timeline' 
+import ReactDom from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import { BrowserRouter, Route } from 'react-router-dom'
+import routes from './routes';
+import {Switch} from 'react-router';
+import Home from './home';
+import Signup from './signUp'
 
-console.log("Hello world!")
+// ReactDom.render(
+//     <Router history={browserHistory} routes={routes} />,
+//     document.getElementById('app')
+//   );
 
-
-ReactDOM.render(
-  <div>
-	  <TopNav/>
-	  <Head />
-		<Steps />
-		<Timeline />
-	</div>,
+ReactDom.render(
+    <BrowserRouter>
+    <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/signup" component={Signup}/>
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
-);
+)
 
-// ReactDOM.render(
-// 	<div>
-// 		<Steps />
-// 	</div>,
-// 	document.getElementById('root')
-// )
+  
