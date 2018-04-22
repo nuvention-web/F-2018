@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Nav from './nav'
-import {HelpBlock, Form, FormControl, FormGroup, ControlLabel,} from 'react-bootstrap'
+import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
 
 
@@ -10,6 +10,7 @@ export default class SignUpForm extends Component {
         super(props, context);
     
         this.handleChange = this.handleChange.bind(this);
+        this.handleEmail = this.handleEmail.bind(this);
     
         this.state = {
             value: '',
@@ -55,6 +56,7 @@ export default class SignUpForm extends Component {
             <HelpBlock>Password must be longer than 5 characters.</HelpBlock>
             </FormGroup>
         </form>
+        <Button block>Submit</Button>
       </div>
     );
   }
