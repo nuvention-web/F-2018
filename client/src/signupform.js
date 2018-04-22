@@ -36,11 +36,12 @@ export default class SignUpForm extends Component {
   render() {
     return (
         <div className="img-container">
+            <h1>Get Started.</h1>
             <form className="form">
             <FormGroup
             controlId="formBasicText"
             validationState={this.getValidationState()}>
-            <ControlLabel>Email</ControlLabel>
+            <ControlLabel className="left-aligned">Email</ControlLabel>
             <FormControl
                 type="text"
                 value={this.state.email}
@@ -53,10 +54,12 @@ export default class SignUpForm extends Component {
                 placeholder="Enter Password"
                 onChange={this.handleChange}/>
             <FormControl.Feedback />
-            <HelpBlock>Password must be longer than 5 characters.</HelpBlock>
+            <HelpBlock className="left-aligned">Password must be longer than 5 characters.</HelpBlock>
             </FormGroup>
+            <div className="submit-container">
+            <Button bsSize="large" className="submit">Submit</Button>
+            </div>
         </form>
-        <Button block>Submit</Button>
       </div>
     );
   }

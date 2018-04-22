@@ -13,3 +13,23 @@
     width: 70%;
     height: 50%;
 }
+
+h1 {
+    padding-top: 10vh;
+    text-align: center;
+    color: #3CB54A;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    font-size: 7vmax;
+}
+
+.submit {
+    background-color: #3CB54A;
+    color: white;
+    margin: 0 auto;
+}
+
+.submit-container {
+    text-align: center;
+    margin: 0 auto;
+}
