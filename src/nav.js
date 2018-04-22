@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button } from 'react-bootstrap';
 import './nav.css';
 
 
@@ -9,7 +9,7 @@ class TopNav extends React.Component {
 		<Navbar className="nav" collapseOnSelect fixedTop fluid>
 			<Navbar.Header>
 				<Navbar.Brand>
-				<a href="#brand">Tt</a>
+				<a href="#brand">Monarch</a>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 			</Navbar.Header>
@@ -31,10 +31,7 @@ class TopNav extends React.Component {
 				</Nav>
 				<Nav pullRight>
 				<NavItem eventKey={1} href="#">
-					Link Right
-				</NavItem>
-				<NavItem eventKey={2} href="#">
-					Link Right
+					<span className="SignUp" >Sign Up</span>
 				</NavItem>
 				</Nav>
 			</Navbar.Collapse>

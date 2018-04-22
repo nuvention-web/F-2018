@@ -21,10 +21,10 @@ class Steps extends React.Component {
   render() {
     return (
       <div className="steps"> 
-        <h1 className="intro-text"> What is <span style={spanStyle}>Tête</span>?</h1>
+        <h1 className="intro-text"> What is <span style={spanStyle}>Monarch</span>?</h1>
         <h3 className="intro-sub">
           Looking to switch careers? Career transition can be difficult 
-          because everyone's transition Tête delivers <span style={boldStyle}>personalized guidance </span> 
+          because everyone's transition Monarch delivers <span style={boldStyle}>personalized guidance </span> 
           by connecting you with people who have gone through a similar transition, or people who are just like you! 
         </h3>
       </div>

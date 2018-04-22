@@ -22,7 +22,7 @@ class Timeline extends React.Component {
   render() {
     return (
         <div className="timeline">
-            <h1 className="timeline-text"> How <span style={spanStyle}>Tête</span> Works </h1>
+            <h1 className="timeline-text"> How <span style={spanStyle}>Monarch</span> Works </h1>
             <h3 className="timeline-sub">A Step by Step Process</h3>
         <VerticalTimeline className="step-line">
           <VerticalTimelineElement
