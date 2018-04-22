@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import routes from './routes';
 import {Switch} from 'react-router';
 import Home from './home';
-import Signup from './signUp'
+import Signup from './signup'
 
 // ReactDom.render(
 //     <Router history={browserHistory} routes={routes} />,

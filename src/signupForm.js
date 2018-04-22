@@ -12,14 +12,14 @@ export default class SignUpForm extends Component {
         this.handleChange = this.handleChange.bind(this);
     
         this.state = {
-            value: ''
+            value: '',
+            email: ''
         };
       }
 
     getValidationState() {
         const length = this.state.value.length;
-        if (length > 10) return 'success';
-        else if (length > 5) return 'warning';
+        if (length > 5) return 'success';
         else if (length > 0) return 'error';
         return null;
     }
@@ -28,6 +28,9 @@ export default class SignUpForm extends Component {
     handleChange(e) {
       this.setState({ value: e.target.value });
     }
+    handleEmail(e) {
+        this.setState({ email: e.target.value });
+      }
 
   render() {
     return (
@@ -39,16 +42,16 @@ export default class SignUpForm extends Component {
             <ControlLabel>Email</ControlLabel>
             <FormControl
                 type="text"
-                value={this.state.value}
+                value={this.state.email}
                 placeholder="Enter Email"
-                onChange={this.handleChange}/>
+                onChange={this.handleEmail}/>
             <FormControl.Feedback />
-            {/* <FormControl
+            <FormControl
                 type="password"
                 value={this.state.value}
                 placeholder="Enter Password"
                 onChange={this.handleChange}/>
-            <FormControl.Feedback /> */}
+            <FormControl.Feedback />
             <HelpBlock>Password must be longer than 5 characters.</HelpBlock>
             </FormGroup>
         </form>
