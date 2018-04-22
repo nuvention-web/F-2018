@@ -14,11 +14,11 @@ import Signup from './signUp'
 
 ReactDom.render(
     <BrowserRouter>
-    <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/signup" component={Signup}/>
-    </Switch>
-  </BrowserRouter>,
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/signup" component={Signup}/>
+        </Switch>
+    </BrowserRouter>,
   document.getElementById('root')
 )
 
