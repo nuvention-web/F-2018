@@ -1,4 +1,4 @@
-var React = require('react');
+//var React = require('react');
 var express = require ('express');
 var bodyParser = require ('body-parser');
 var Textinput = require ('./models/textinput');
