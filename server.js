@@ -19,9 +19,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(cors());
 
-router.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+  });
 
 /*
 router.get('/text', (req, res) => {
