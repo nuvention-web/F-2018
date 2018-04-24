@@ -65,3 +65,12 @@ ul {
 .vertical-timeline-element-icon {
     font-size: 200%;
 }
+
+.timeline-body {
+    font-size: 125% !important;
+}
+
+.vertical-timeline-element-title {
+    color: #3CB54A;
+    font-size: 200% !important;
+}

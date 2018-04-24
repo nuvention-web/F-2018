@@ -8,6 +8,7 @@ var cors = require('cors');
 var session = require ('express-session');
 import router from './router';
 const app = express();
+const path = require('path');
 
 
 
@@ -29,6 +30,11 @@ app.use('/', router);
 
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
 
 /*
 router.get('/text', (req, res) => {

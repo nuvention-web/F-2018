@@ -2,7 +2,7 @@
     background-color: #3CB54A;
     color: white;
     font-weight: bold;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open', sans-serif;
     border: none;
     margin: 0;
     border-radius: 0%;
@@ -10,7 +10,7 @@
 
 .navbar-default .navbar-brand {
     color: white;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open', sans-serif;
     font-weight: 300;
     font-size: 300%;
 }

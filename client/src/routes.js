@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import App from './app';
 import Home from './home';
-import Signup from './signUp'
+import Signup from './signup'
 import {Switch} from 'react-router'; 
 
 export default (

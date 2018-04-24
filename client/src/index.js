@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import routes from './routes';
 import {Switch} from 'react-router';
 import Home from './home';
-import Signup from './signUp'
+import Signup from './signup'
 
 // ReactDom.render(
 //     <Router history={browserHistory} routes={routes} />,
@@ -14,11 +14,11 @@ import Signup from './signUp'
 
 ReactDom.render(
     <BrowserRouter>
-    <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/signup" component={Signup}/>
-    </Switch>
-  </BrowserRouter>,
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/signup" component={Signup}/>
+        </Switch>
+    </BrowserRouter>,
   document.getElementById('root')
 )
 
