@@ -5,7 +5,8 @@ var Textinput = require ('./models/textinput');
 var mongoose = require ('mongoose');
 var fetch = require ('node-fetch');
 var cors = require('cors');
-const router = express.Router();
+var session = require ('express-session');
+import router from './router';
 const app = express();
 
 
@@ -14,21 +15,27 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
-app.use(bodyParser.json());
 
+//use sessions for tracking logins
+app.use(session({
+    secret: 'work hard',
+    resave: true,
+    saveUninitialized: false
+  }));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', router);
+
 app.use(cors());
 
-router.get('/', (req, res) => {
-    res.send('hello world');
-});
 
 /*
 router.get('/text', (req, res) => {
     res.send(data);
 });
 */
-
+/*
 router.post('/text', (req, res)=> {
 	let input = req.body.text;
     console.log(input);
@@ -41,10 +48,6 @@ router.post('/text', (req, res)=> {
         res.status(400).send('unable to save to database');
     })
 })
-
-
-
-
 
 router.get('/api', (req, res) => {
     console.log("fetching example data with authenticated user in Onet Database")
@@ -60,6 +63,7 @@ router.get('/api', (req, res) => {
         });
     res.send("got api call!")
 })
+*/
 
 
 mongoose.connect('mongodb://localhost/teamf', function(err) {

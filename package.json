@@ -2,11 +2,15 @@
   "name": "example-create-react-app-express",
   "version": "1.0.0",
   "scripts": {
+    "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js",
     "client": "cd client && npm run start",
     "server": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "express-session": "^1.15.2",
     "mongoose": "^4.10.8",
     "cors": "^2.8.4",
     "body-parser": "^1.17.2",
@@ -15,6 +19,11 @@
     "express": "^4.16.2"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^1.12.1",
     "concurrently": "^3.5.0"
   }
 }
