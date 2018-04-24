@@ -29,53 +29,72 @@ class Timeline extends React.Component {
             className="vertical-timeline-element--work"
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="1">
-            <h3 className="vertical-timeline-element-title">Creative Director</h3>
-            <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-            <p>
-              This is a placeholder to test whether the component expands to accomodate for longer posts.  
-              I need to test this to understand how hard it will be to add pictures and such to the individual parts of the step-by-step process.
-              Eventually, these placeholders will be filled with information and images that display Tete's mission 
-              and how we're trying to help our users and stuff.
+            <h3 className="vertical-timeline-element-title">Sign Up</h3>
+            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
+            <p className="timeline-body">
+              Simply login with your LinkedIn credentials and answer a couple questions about yourself for your profile.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work" 
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="2">
-            <h3 className="vertical-timeline-element-title">Art Director</h3>
-            <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-            <p>
-              Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+            <h3 className="vertical-timeline-element-title">Browse Connections</h3>
+            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
+            <p className="timeline-body">
+              Instantly, Monarch will display several mentors that may be a good match for your career transition.
+              Monarch will also display people just like you that you can talk to!
+              You will then have the opportunity to browse their profile and fill in your 
+              availability for a 30-minute video call that week or next to discuss your journey.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work" 
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="3">
-            <h3 className="vertical-timeline-element-title">Web Designer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-            <p>
-              User Experience, Visual Design
+            <h3 className="vertical-timeline-element-title">Find a Time</h3>
+            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
+            <p className="timeline-body">
+            Once a time is agreed upon using Monarch's own Doodle page, Monarch will send you and your 
+            mentor a calendar invite with a link to a Google Hangouts call and access to each other’s emails 
+            if you need to communicate.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="4">
-            <h3 className="vertical-timeline-element-title">Web Designer</h3>
+            <h3 className="vertical-timeline-element-title">Video Conferencing</h3>
             <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-            <p>
-              User Experience, Visual Design
+            <p className="timeline-body">
+            Meet your mentor for 30 minutes to learn all about their experience switching into 
+            their new career and what insider tips they have to share before you take the leap.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="5">
-            <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-            <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-            <p>
-              Strategy, Social Media
+            <h3 className="vertical-timeline-element-title">Say Thank You</h3>
+            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
+            <p className="timeline-body">
+            At Monarch, we believe you should nurture relationships that have helped 
+            you along your career journey. So, after your conversation, we just ask you 
+            leave your mentor a few words of gratitude for their time and advice.  
+            If you want to stand out to your mentor and show your gratitude through a cup of coffee, 
+            we encourage you to send them a $5 Starbucks gift card through our website.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
+            icon="6">
+            <h3 className="vertical-timeline-element-title">Network</h3>
+            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
+            <p className="timeline-body">
+            Your Monarch experience isn’t over just yet! We will recommend other mentors for 
+            you to speak with, and you will have access to browsing our community, so you can 
+            find other people who can help you along your journey of reinvention.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>

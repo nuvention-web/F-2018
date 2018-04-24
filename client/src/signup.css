@@ -14,11 +14,11 @@
     height: 50%;
 }
 
-h1 {
+.formTitle {
     padding-top: 10vh;
     text-align: center;
     color: #3CB54A;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open', sans-serif;
     font-weight: 300;
     font-size: 7vmax;
 }

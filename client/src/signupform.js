@@ -36,7 +36,7 @@ export default class SignUpForm extends Component {
   render() {
     return (
         <div className="img-container">
-            <h1>Get Started.</h1>
+            <h1 className="formTitle">Get Started.</h1>
             <form className="form">
             <FormGroup
             controlId="formBasicText"
