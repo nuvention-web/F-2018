@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 });
 app.use(bodyParser.json());
 
-app.use('/', router);
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(cors());
 
 router.get('/', (req, res) => {
