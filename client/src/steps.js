@@ -26,11 +26,6 @@ class Steps extends React.Component {
     return (
       <div className="steps"> 
         <h1 className="intro-text"> What is <span style={spanStyle}>Monarch</span>?</h1>
-        <h3 className="intro-sub">
-          Looking to switch careers? Career transition can be difficult 
-          because everyone's transition Monarch delivers <span style={boldStyle}>personalized guidance </span> 
-          by connecting you with people who have gone through a similar transition, or people who are just like you!
-        </h3>
         <h3 className="intro-sub">We believe a career is a journey where reinvention is always within your reach, 
           and <span style={boldStyle}>relationships </span>have the power to inspire each step along the way.
         </h3>

@@ -30,7 +30,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="1">
             <h3 className="vertical-timeline-element-title">Sign Up</h3>
-            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
             <p className="timeline-body">
               Simply login with your LinkedIn credentials and answer a couple questions about yourself for your profile.
             </p>
@@ -40,7 +39,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="2">
             <h3 className="vertical-timeline-element-title">Browse Connections</h3>
-            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
             <p className="timeline-body">
               Instantly, Monarch will display several mentors that may be a good match for your career transition.
               Monarch will also display people just like you that you can talk to!
@@ -53,7 +51,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="3">
             <h3 className="vertical-timeline-element-title">Find a Time</h3>
-            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
             <p className="timeline-body">
             Once a time is agreed upon using Monarch's own Doodle page, Monarch will send you and your 
             mentor a calendar invite with a link to a Google Hangouts call and access to each other’s emails 
@@ -65,7 +62,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="4">
             <h3 className="vertical-timeline-element-title">Video Conferencing</h3>
-            <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
             <p className="timeline-body">
             Meet your mentor for 30 minutes to learn all about their experience switching into 
             their new career and what insider tips they have to share before you take the leap.
@@ -76,7 +72,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="5">
             <h3 className="vertical-timeline-element-title">Say Thank You</h3>
-            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
             <p className="timeline-body">
             At Monarch, we believe you should nurture relationships that have helped 
             you along your career journey. So, after your conversation, we just ask you 
@@ -90,7 +85,6 @@ class Timeline extends React.Component {
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="6">
             <h3 className="vertical-timeline-element-title">Network</h3>
-            <h4 className="vertical-timeline-element-subtitle">Placeholder</h4>
             <p className="timeline-body">
             Your Monarch experience isn’t over just yet! We will recommend other mentors for 
             you to speak with, and you will have access to browsing our community, so you can 
