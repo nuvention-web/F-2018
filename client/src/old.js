@@ -5,17 +5,32 @@ import TextField from 'material-ui/TextField';
 import axios from 'axios';
 
 
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.key = 1;
         this.state = { text: '' };
         this.updateText = this.updateText.bind(this);
+        this.submitText = this.submitText.bind(this);
+        this.exampleApiCall = this.exampleApiCall.bind(this);
     }
 
 
     updateText = (e, value) => {
         this.setState({ text: [value] });
+    }
+
+
+    exampleApiCall = (e) => {
+        console.log("calling api")
+
+        axios.get('/api', {
+            text: 'api'
+        })
+        .then(function(res) {
+            console.log(res);
+        })
     }
 
     submitText = (e) => {
@@ -46,6 +61,11 @@ class App extends Component {
                         label="Submit" 
                         primary={true}
                         onClick={this.submitText} 
+                    />
+                    <FlatButton
+                        label="API Call"
+                        primary={true}
+                        onClick={this.exampleApiCall}
                     />
                 </div>
             </MuiThemeProvider>

@@ -1,0 +1,76 @@
+.timeline {
+    padding-top: 2vmax;
+    text-align: center; 
+    width: 100%;  
+    background-color: #6E8387;
+}
+
+
+.timeline-text {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 5vmax;
+    padding-left: 5vw;
+    margin: 0;
+}
+
+.timeline-sub {
+    margin: 0 auto;
+    color: white;
+    margin-top: 2vmax;
+    line-height: 200%;
+    width: 80%;
+    font-size: 2vmax;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.steps-num {
+    border: .3vh solid #3CB54A;
+    border-radius: 50%;
+    width: 3vmax;
+    height: 3vmax;
+    font-size: 2vmax;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 25vh;
+}
+
+
+
+.step-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    /* background: #3CB54A !important; */
+}
+
+.vertical-timeline-element-content {
+    border-top: solid #3CB54A !important;
+}
+
+@media only screen and (min-width: 1170px) {
+    .vertical-timeline-element-icon {
+        font-size: 300% !important;
+    }
+}
+
+.vertical-timeline-element-icon {
+    font-size: 200%;
+}
+
+.timeline-body {
+    font-size: 125% !important;
+}
+
+.vertical-timeline-element-title {
+    color: #3CB54A;
+    font-size: 200% !important;
+}

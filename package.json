@@ -1,30 +1,29 @@
 {
-  "name": "Team-F",
-  "version": "0.1.0",
-  "private": true,
+  "name": "example-create-react-app-express",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
   "dependencies": {
-    "axios": "^0.16.1",
-    "body-parser": "^1.17.2",
-    "express": "^4.16.2",
-    "material-ui": "^0.19.4",
+    "bcrypt": "^1.0.2",
+    "express-session": "^1.15.2",
     "mongoose": "^4.10.8",
+    "cors": "^2.8.4",
+    "body-parser": "^1.17.2",
     "node-fetch": "^2.0.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "concurrently": "^3.5.0",
+    "express": "^4.16.2"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "nodemon": "^1.12.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:8888/"
+    "nodemon": "^1.12.1",
+    "concurrently": "^3.5.0"
+  }
 }
