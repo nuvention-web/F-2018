@@ -14,27 +14,28 @@ img {
 
 .title-box {
     text-align: center;
-    background-color: rgba(3, 3, 3, 0.6);
+    /* background-color: rgba(3, 3, 3, 0.6); */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
-    width: 70%;
+    width: 100%;
     height: 50%;
 }
 
 h1 {
     color: white;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 12vw;
 }
 
 h5 {
     color: white;
     font-family: 'Open Sans', sans-serif;
-    font-size: 3vmax;
-    padding-left: 15%;
-    padding-right: 15%;
+    font-size: 3.5vmax;
+    top: 50%;
+    /* padding-left: 15%;
+    padding-right: 15%; */
 }
 
 hr {

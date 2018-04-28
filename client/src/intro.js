@@ -15,8 +15,8 @@ class Head extends React.Component {
       <div className="img-container" style={imageStyle}>
         {/* <img src={logo}/> */}
         <div className="title-box">
-          <h1> Monarch </h1>
-          <hr/>
+          {/* <h1> MONARCH </h1> */}
+          {/* <hr/> */}
           <h5> Where Conversations Inspire Your Career Journey.</h5>
         </div>
       </div>

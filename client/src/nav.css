@@ -22,7 +22,7 @@
 .top-name {
     display: inline-block;
     height: 50px;
-    line-height: 50px;
+    line-height: 60px;
 }
 
 .logo {
@@ -34,9 +34,9 @@
 .navbar-default .navbar-brand {
     /* color: white; */
     color: black;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
-    font-size: 55px;
+    font-size: 45px;
     padding: 0;
     padding-left: 15px;
     

@@ -11,7 +11,7 @@ class TopNav extends React.Component {
 				<Navbar.Brand>
 					<a href="/" className="Name">
 						<div className="top-logo"><img className="logo" src={logo}/></div>
-						<div className="top-name">Monarch</div>
+						<div className="top-name">MONARCH</div>
 					</a>
 				</Navbar.Brand>
 				<Navbar.Toggle />
