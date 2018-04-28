@@ -1,22 +1,49 @@
 .nav {
-    background-color: #3CB54A;
-    color: white;
+    /* background-color: #3CB54A; */
+    background-color: white;
+    /* color: white; */
+    color: black;
     font-weight: bold;
-    font-family: 'Open', sans-serif;
-    border: none;
+    font-family: 'Philosopher', sans-serif;
+    border-bottom:  none;
+    box-shadow: 1px 1px 1px #546D64;
     margin: 0;
     border-radius: 0%;
 }
 
+.Name {
+}
+
+.top-logo {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.top-name {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+
+.logo {
+    width: 50px;
+    height: 35px;
+    margin: 0;
+}
+
 .navbar-default .navbar-brand {
-    color: white;
-    font-family: 'Open', sans-serif;
+    /* color: white; */
+    color: black;
+    font-family: 'Philosopher', sans-serif;
     font-weight: 300;
-    font-size: 300%;
+    font-size: 55px;
+    padding: 0;
+    padding-left: 15px;
+    
 }
 
 .navbar-default .navbar-brand:hover {
-    color: white;
+    color: black;
 }
 
 .navbar-default .navbar-toggle {
@@ -41,14 +68,19 @@
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: white;
+    color: black;
     font-family: 'Open Sans', sans-serif;
 
 }
 
 .SignUp {
     padding: 5px;
-    border: 3px solid white;
+    border: 3px solid black;
+    color: black;
     font-size: 150%;
     border-radius: 10%;
+}
+
+.navbar-right {
+    box-shadow: none !important;
 }

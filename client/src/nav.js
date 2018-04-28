@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button } from 'react-bootstrap';
 import './nav.css';
-
+import logo from './static/logo.png'
 
 class TopNav extends React.Component {
 	render() {
@@ -9,7 +9,10 @@ class TopNav extends React.Component {
 		<Navbar className="nav" collapseOnSelect fixedTop fluid>
 			<Navbar.Header>
 				<Navbar.Brand>
-				<a href="#brand">Monarch</a>
+					<a href="/" className="Name">
+						<div className="top-logo"><img className="logo" src={logo}/></div>
+						<div className="top-name">Monarch</div>
+					</a>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 			</Navbar.Header>

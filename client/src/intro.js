@@ -2,15 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './intro.css';
 import image from './static/intro.jpeg'
+import logo from './static/logo.png'
 
 var imageStyle = {
   backgroundImage: `url(${image})`
 }
 
+
 class Head extends React.Component {
   render() {
     return (
       <div className="img-container" style={imageStyle}>
+        {/* <img src={logo}/> */}
         <div className="title-box">
           <h1> Monarch </h1>
           <hr/>

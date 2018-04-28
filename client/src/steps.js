@@ -5,8 +5,9 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 // import 'react-vertical-timeline-component/style.min.css';
 
 var spanStyle = {
-  fontFamily: '\'Dosis\', sans-serif',
-  color: '#3CB54A'
+  fontFamily: '\'Philosopher\', sans-serif',
+  color: '#3CB54A',
+  fontSize: '105%'
 }
 
 var boldStyle = {
