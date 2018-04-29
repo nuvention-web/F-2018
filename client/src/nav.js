@@ -4,9 +4,46 @@ import './nav.css';
 import logo from './static/logo.png'
 
 class TopNav extends React.Component {
+	state = {
+		auth: false,
+		slide: "-53px",  // How much should the Navbar slide up or down
+		lastScrollY: 300,  // Keep track of current position in state
+	  };
+
+	  componentWillMount() {
+		// When this component mounts, begin listening for scroll changes
+		window.addEventListener('scroll', this.handleScroll);
+	  }
+	
+	  componentWillUnmount() {
+		// If this component is unmounted, stop listening
+		window.removeEventListener('scroll', this.handleScroll);
+	  }
+	
+	  handleScroll = () => {
+		const { lastScrollY } = this.state; 
+		const currentScrollY = window.scrollY;
+	
+	
+		if (currentScrollY > lastScrollY) {
+		  this.setState({ slide: '0px' });
+		} else {
+		  this.setState({ slide: '-53px' });
+		}
+		// this.setState({ lastScrollY: currentScrollY });
+	  };
+
+
+
+
 	render() {
 		return (
-		<Navbar className="nav" collapseOnSelect fixedTop fluid>
+		<Navbar className="nav" collapseOnSelect fixedTop fluid 
+		style={{
+			transform: `translate(0, ${this.state.slide})`,
+			transition: 'transform 150ms linear',
+		  }}
+		  >
 			<Navbar.Header>
 				<Navbar.Brand>
 					<a href="/" className="Name">
