@@ -1,0 +1,46 @@
+.top-profile {
+    height: 75vh;
+}
+
+.top-color {
+    background-color: #6e8387;
+    height: 30vh;
+}
+
+.avatar {
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+}
+
+.profile-intro {
+    position: relative;
+    text-align: center;
+    bottom: 100px;
+}
+
+.profile-name {
+    color: black;
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.connectButton {
+    margin-top: 15px;
+    width: 20%;
+    height: 10%;
+    background-color: #3CB54A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+}
+
+.connectButton:hover{
+    margin-top: 15px;
+    width: 20%;
+    height: 10%;
+    background-color: #3CB54A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+}

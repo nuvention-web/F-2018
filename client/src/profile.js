@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from './nav'
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel,} from 'react-bootstrap'
 import SignUpForm from './signupform'
+import ProfileTop from './profile-top'
 
 
 
@@ -10,6 +11,7 @@ export default class Profile extends Component {
     return (
       <div id="contact">
         <Nav/>
+        <ProfileTop/>
       </div>
     );
   }

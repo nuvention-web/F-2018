@@ -9,7 +9,7 @@
 
 .intro-text {
     color: #546D64;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 5vmax;
     padding-left: 5vw;
     text-align: left;
@@ -47,3 +47,24 @@ ul {
 .vertical-timeline-element-content::before {
     border-left-color: green !important;
 } */
+
+
+.signupButton {
+    margin-top: 15px;
+    width: 20%;
+    height: 10%;
+    background-color: #3CB54A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+}
+
+.signupButton:hover{
+    margin-top: 15px;
+    width: 20%;
+    height: 10%;
+    background-color: #3CB54A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+}

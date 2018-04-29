@@ -22,7 +22,7 @@ class Timeline extends React.Component {
   render() {
     return (
         <div className="timeline">
-            <h1 className="timeline-text"> How <span style={spanStyle}>Monarch</span> Works </h1>
+            <h1 className="timeline-text"> How <span style={spanStyle}>It</span> Works </h1>
             <h3 className="timeline-sub">A Step by Step Process</h3>
         <VerticalTimeline className="step-line">
           <VerticalTimelineElement
@@ -40,10 +40,9 @@ class Timeline extends React.Component {
             icon="2">
             <h3 className="vertical-timeline-element-title">Browse Connections</h3>
             <p className="timeline-body">
-              Instantly, Monarch will display several mentors that may be a good match for your career transition.
-              Monarch will also display people just like you that you can talk to!
-              You will then have the opportunity to browse their profile and fill in your 
-              availability for a 30-minute video call that week or next to discuss your journey.
+            After 24-48 hours, you will be matched with a mentor who has experienced 
+            the same career transition you are considering for a 30-minute video call 
+            to discuss your journey.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -73,11 +72,10 @@ class Timeline extends React.Component {
             icon="5">
             <h3 className="vertical-timeline-element-title">Say Thank You</h3>
             <p className="timeline-body">
-            At Monarch, we believe you should nurture relationships that have helped 
-            you along your career journey. So, after your conversation, we just ask you 
-            leave your mentor a few words of gratitude for their time and advice.  
-            If you want to stand out to your mentor and show your gratitude through a cup of coffee, 
-            we encourage you to send them a $5 Starbucks gift card through our website.
+            At Monarch, we believe you should nurture relationships that have 
+            helped you along your career journey. So, after your conversation, 
+            we just ask you leave your mentor a few words of gratitude for their 
+            time and advice.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
