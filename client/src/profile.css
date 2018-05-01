@@ -1,12 +1,12 @@
 .top-profile {
-    height: 75vh;
+    margin-bottom: -200px;
     background-color: #e6ecf0;
 }
 
 .top-color {
     height: 35vh;
     background-size: cover;
-    background-position-y: 350px;
+    background-position-y: 35vmax;
 }
 
 .avatar {
@@ -51,8 +51,8 @@
 
 .connectButton:hover{
     margin-top: 15px;
-    width: 20%;
-    height: 10%;
+    width: 45vmin;
+    height: 50px;
     background-color: #3CB54A;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 150%;
@@ -67,6 +67,7 @@
 }
 
 .profile-section {
+    top: -100px;
     display: inline-block;
     width: 85vmin;
     height: 300px;
