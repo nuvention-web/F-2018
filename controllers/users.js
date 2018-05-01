@@ -57,7 +57,7 @@ export const getUserProfile = (req, res, next) => {
     .exec(function(err, articles) {
       if (err) {
         return res.send(400, {
-          message: getErrorMessage(err);
+          message: getErrorMessage(err)
         });
       } else {
         var profile = UserProfile.find({username: articles.username})

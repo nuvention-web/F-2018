@@ -34,7 +34,7 @@ build/Release
 
 # Dependency directories
 node_modules/
-/client/node_modules/
+client/node_modules/
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -60,9 +60,9 @@ typings/
 
 .DS_STORE
 
-/data/
+data/
 
-/client/build/
+client/build/
 
-/dist/
+dist/
 

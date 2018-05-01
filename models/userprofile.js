@@ -13,10 +13,7 @@ var profileSchema = new mongoose.Schema({
         last: String
     },
     gender: {
-        type: String,
-        max: 3,
-        min: 0,
-        default: GENDERS.Unspecified
+        type: String
     },
     age: Number,
     education: [{
