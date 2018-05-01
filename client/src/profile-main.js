@@ -10,16 +10,21 @@ import arrow from './static/right-arrow.png'
 
 var profileTest = {
     name: "Drew Parsons",
-    hometown: "Denver, CO"
+    hometown: "Denver, CO",
+    about: "I am a career switcher looking to talk to some really cool dudes about switching from computer science to something that more suits my likings and my skills.  I\'m struggling knowing where to start and blah blah blah"
 }
 
 var grayed = {
     backgroundColor: "#e6ecf0"
 }
 
+var colored = {
+    borderColor: "#3CB54A"
+}
+
 var graytext = {
     color: "lightgray",
-    fontSize: "15px",
+    fontSize: "13px",
     marginTop: "15px"
 }
 
@@ -35,12 +40,8 @@ class ProfileMain extends React.Component {
       <div className="main-profile" style={grayed}>
         <div className="profile-section">
             <h3 className=""> About </h3>
-            <hr/>
-            I am a career switcher looking to talk 
-            to some really cool dudes about switching 
-            from computer science to something that more 
-            suits my likings and my skills.  I'm struggling 
-            knowing where to start and blah blah blah
+            <hr style={colored}/>
+            {profileTest.about}
         </div>
         <div className="profile-transition">
             Journalist
@@ -49,7 +50,7 @@ class ProfileMain extends React.Component {
             <hr style={lineStyle}/>
             <div style={graytext}> This section shows the industry 
             where the user previously worked in, and the industry he/she 
-            is interested in.
+            is interested in.  This helps Monarch match individuals with similar interests.
             </div>
         </div>
       </div>
