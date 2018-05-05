@@ -17,23 +17,21 @@ var profileSchema = new mongoose.Schema({
     },
     age: Number,
     education: [{
-        type: String,
-        detail: {
-            major: String,
-            degree: String,
-            institution: String
-        }
+        major: String,
+        degree: String,
+        institution: String
     }],
     experience: [{
+        company: String,
+        position: String,
+        dateofjoin: Date,
+        dateofleave: Date,
+        industry: String,
+        location: String
+    }],
+    targetindustry: {
         type: String,
-        detail: {
-            company: String,
-            position: String,
-            dateofjoin: Date,
-            dateofleave: Date,
-            location: String
-        }
-    }]
+    }
   });
 
 export default mongoose.model('UserProfile', profileSchema);

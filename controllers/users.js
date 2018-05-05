@@ -51,29 +51,38 @@ export const logUser = (req, res, next) => {
 }
 
 export const getUserProfile = (req, res, next) => {
-    User.find()
+    User.findOne()
     .where('_id')
     .equals(req.session.userId)
-    .exec(function(err, articles) {
+    .exec(function(err, user) {
       if (err) {
-        return res.send(400, {
-          message: getErrorMessage(err)
-        });
+        res.status(400).send({message: err.message});
       } else {
-        var profile = UserProfile.find({username: articles.username})
-        res.jsonp(profile);
+        // console.log(user)
+        // console.log(req.session.userId)
+        UserProfile.findOne({username: user.username})
+        .exec(function(err, userProfile) {
+          if (err) {
+            res.status(400).send({message: err.message});
+          } else {
+            //console.log(userProfile);
+            res.jsonp(userProfile);
+          }
+        })
+        //console.log(profile)
+        //res.jsonp(profile);
       }
     });
 };
 
 export const addUserProfile = (req, res, next) => {
-  var newProfile = new UserProfile(req.body);
-  console.log(newProfile);
-  newProfile.save()
-  .then(item => {
-    res.send("item saved to DB");
-  })
-  .catch(err => {
-    res.status(400).send("unable to save to DB");
-  })
+    var newProfile = new UserProfile(req.body);
+    console.log(newProfile);
+    newProfile.save()
+    .then(item => {
+      res.send("item saved to DB");
+    })
+    .catch(err => {
+      res.status(400).send({message: err.message});
+    })
 };
