@@ -4,7 +4,7 @@ import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'rea
 import './signup.css';
 
 
-export default class SignUpForm extends Component {
+export default class Wizard extends Component {
 
     constructor(props, context) {
         super(props, context);
