@@ -73,7 +73,8 @@ router.get('/api', (req, res) => {
 */
 
 
-mongoose.connect('mongodb://localhost/teamf', function(err) {
+//mongoose.connect('mongodb://localhost/teamf', function(err) {
+mongoose.connect('mongodb://admin:teamf@ds217350.mlab.com:17350/teamf', function(err) {
     console.log(`Listening on port ${process.env.PORT || 8888}`);
     app.listen(process.env.PORT || 8888);
 })
