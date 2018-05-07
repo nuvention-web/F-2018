@@ -7,6 +7,7 @@ import {Switch} from 'react-router';
 import Home from './home';
 import Signup from './signup'
 import Profile from './profile'
+import Quiz from './quiz'
 
 // ReactDom.render(
 //     <Router history={browserHistory} routes={routes} />,
@@ -19,6 +20,7 @@ ReactDom.render(
             <Route exact path="/" component={Home}/>
             <Route exact path="/signup" component={Signup}/>
             <Route path="/profile/" component={Profile}/>
+            <Route path="/edit/" component={Quiz}/>
         </Switch>
     </BrowserRouter>,
   document.getElementById('root')
