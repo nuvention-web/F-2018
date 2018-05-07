@@ -66,8 +66,7 @@ export default class SignUpForm extends Component {
                         type="password"
                         value={this.state.value}
                         placeholder="Enter Password"
-                        onChange={this.handleChange}
-                        validationState/>
+                        onChange={this.handleChange}/>
                     <FormControl.Feedback />
                     <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock>
                 </FormGroup>
