@@ -18,6 +18,7 @@ export default class Wizard extends Component {
     
         this.handleName = this.handleName.bind(this);
         this.handleAge = this.handleAge.bind(this);
+        this.handleAge = this.handleAge.bind(this);
         this.handleMajor = this.handleMajor.bind(this);
         this.handleDegree = this.handleDegree.bind(this);
         this.handleInstitution = this.handleInstitution.bind(this);
@@ -33,6 +34,7 @@ export default class Wizard extends Component {
         this.state = {
             name: '',
             age: '',
+            about: '',
             major: '',
             degree: '',
             institution: '',
@@ -106,6 +108,10 @@ export default class Wizard extends Component {
         this.setState({ transitioningQuestions: e.target.value });
     }
 
+    submitTest() {
+        console.log(this.state)
+    }
+
   render() {
     return (
         <div className="img-container">
@@ -132,10 +138,10 @@ export default class Wizard extends Component {
                         placeholder=""
                         onChange={this.handleCity}/>
                     <FormControl.Feedback />
-                    <FormControl componentClass="select" placeholder="City" onChange={this.handleState}>
-                        <option value="hello">Alabama</option>
+                    <FormControl componentClass="select" placeholder="State" onChange={this.handleState}>
+                        <option value="Alabama">Alabama</option>
                         <option value="Alaska">Alaska</option>
-                        <option value="Arizone">Arizone</option>
+                        <option value="Arizona">Arizona</option>
                         <option value="Arkansas">Arkansas</option>
                         <option value="California">California</option>
                         <option value="Colorado">Colorado</option>
@@ -185,18 +191,23 @@ export default class Wizard extends Component {
                         <option value="Wyoming">Wyoming</option>
                     </FormControl>
                 <FormGroup>
-                    {/* <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock> */}
-                    <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Current or Most Recent Job</ControlLabel>
+                    <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Education</ControlLabel>
                     <FormControl
                         type="text"
-                        value={this.state.company}
-                        placeholder="Company"
+                        value={this.state.institution}
+                        placeholder="Institution"
+                        onChange={this.handleInstitution}/>
+                    <FormControl.Feedback />
+                    <FormControl
+                        type="text"
+                        value={this.state.major}
+                        placeholder="Major"
                         onChange={this.handleMajor}/>
                     <FormControl.Feedback />
                     <FormControl
                         type="text"
-                        value={this.state.position}
-                        placeholder="Position"
+                        value={this.state.degree}
+                        placeholder="Degree"
                         onChange={this.handleDegree}/>
                     <FormControl.Feedback />
                 </FormGroup>
@@ -206,22 +217,34 @@ export default class Wizard extends Component {
                         type="text"
                         value={this.state.company}
                         placeholder="Company"
-                        onChange={this.handleMajor}/>
+                        onChange={this.handleCompany}/>
                 <FormControl.Feedback />
                 <FormControl
                         type="text"
                         value={this.state.position}
-                        placeholder="Company"
+                        placeholder="Position"
                         onChange={this.handlePosition}/>
                 <FormControl.Feedback />
                 
+                <hr style={{marginTop: '30px', borderColor: '#3CB54A'}} />
+
+
+
                 <FormGroup controlId="formControlsTextarea">
-                <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Why are you looking to change careers?  What are your motivations and fears about doing so?</ControlLabel>
-                <FormControl componentClass="textarea" placeholder="textarea" />
+                    <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Tell us about yourself.</ControlLabel>
+                    <FormControl 
+                    componentClass="textarea" 
+                    placeholder=""/>
                 </FormGroup>
+                <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.  You may choose to talk about whatver you like.</HelpBlock>
+
+                <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Why are you looking to change careers?  What are your motivations and fears about doing so?</ControlLabel>
+                <FormControl 
+                componentClass="textarea" 
+                placeholder="textarea"/>
 
                 <div className="submit-container">
-                <Button bsSize="large" className="submit">Submit</Button>
+                <Button bsSize="large" className="submit" onClick={this.submitTest()}>Submit</Button>
                 </div>
             </form>
       </div>
