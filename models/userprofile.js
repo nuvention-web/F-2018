@@ -12,10 +12,11 @@ var profileSchema = new mongoose.Schema({
         middle: String,
         last: String
     },
-    gender: {
-        type: String
-    },
     age: Number,
+    location: {
+        city: String,
+        state: String
+    },
     education: [{
         major: String,
         degree: String,
@@ -24,10 +25,7 @@ var profileSchema = new mongoose.Schema({
     experience: [{
         company: String,
         position: String,
-        dateofjoin: Date,
-        dateofleave: Date,
-        industry: String,
-        location: String
+        industry: String
     }],
     targetindustry: {
         type: String,

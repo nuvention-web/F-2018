@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from './nav'
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
+import axios from 'axios';
 
 
 export default class SignUpForm extends Component {
@@ -12,16 +13,17 @@ export default class SignUpForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
         this.handleName = this.handleName.bind(this);
+        this.submitUser = this.submitUser.bind(this);
     
         this.state = {
-            value: '',
+            password: '',
             email: '',
-            name: ''
+            username: ''
         };
       }
 
     getValidationState() {
-        const length = this.state.value.length;
+        const length = this.state.password.length;
         if (length > 8) return 'success';
         else if (length > 0) return 'error';
         return null;
@@ -29,14 +31,29 @@ export default class SignUpForm extends Component {
     
   
     handleChange(e) {
-      this.setState({ value: e.target.value });
+      this.setState({ password: e.target.value });
     }
     handleEmail(e) {
         this.setState({ email: e.target.value });
       }
 
     handleName(e) {
-        this.setState({ name: e.target.value });
+        this.setState({ username: e.target.value });
+    }
+
+    submitUser() {
+        console.log(this.state);
+        axios.post('/users/create', {
+            email: this.state.email,
+            username: this.state.username,
+            password: this.state.password
+        })
+        .then(function(res) {
+            console.log(res);
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
     }
 
   render() {
@@ -47,8 +64,8 @@ export default class SignUpForm extends Component {
                     <ControlLabel className="left-aligned">Name</ControlLabel>
                     <FormControl
                         type="text"
-                        value={this.state.name}
-                        placeholder="Enter Email"
+                        value={this.state.username}
+                        placeholder="Enter Username"
                         onChange={this.handleName}/>
                     <FormControl.Feedback />
                     <ControlLabel className="left-aligned">Email</ControlLabel>
@@ -64,14 +81,14 @@ export default class SignUpForm extends Component {
                     <ControlLabel className="left-aligned">Password</ControlLabel>
                     <FormControl
                         type="password"
-                        value={this.state.value}
+                        value={this.state.password}
                         placeholder="Enter Password"
                         onChange={this.handleChange}/>
                     <FormControl.Feedback />
                     <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock>
                 </FormGroup>
                 <div className="submit-container">
-                <Button bsSize="large" className="submit">Submit</Button>
+                <Button bsSize="large" className="submit" onClick={this.submitUser}>Submit</Button>
                 </div>
             </form>
       </div>
