@@ -61,7 +61,7 @@ export default class SignUpForm extends Component {
         <div className="img-container">
             <h1 className="formTitle">Get Started.</h1>
             <form className="form">
-                    <ControlLabel className="left-aligned">Name</ControlLabel>
+                    <ControlLabel className="left-aligned">Username</ControlLabel>
                     <FormControl
                         type="text"
                         value={this.state.username}
