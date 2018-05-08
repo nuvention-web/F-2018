@@ -88,7 +88,7 @@ export default class SignUpForm extends Component {
                     <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock>
                 </FormGroup>
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitUser}>Submit</Button>
+                <Button bsSize="large" className="submit" onClick={this.submitUser} href="/edit">Submit</Button>
                 </div>
             </form>
       </div>
