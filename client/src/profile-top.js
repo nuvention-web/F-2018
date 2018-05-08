@@ -9,7 +9,8 @@ import image from './static/shutterstock_520402930.jpg'
 
 var profileTest = {
     name: "Drew Parsons",
-    hometown: "Denver, CO"
+    hometown: "Denver, CO",
+    age: "20"
 }
 
 var grayed = {

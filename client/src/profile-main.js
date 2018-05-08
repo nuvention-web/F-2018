@@ -12,7 +12,17 @@ import axios from 'axios';
 var profileTest = {
     name: "Drew Parsons",
     hometown: "Denver, CO",
-    about: "I am a career switcher looking to talk to some really cool dudes about switching from computer science to something that more suits my likings and my skills.  I\'m struggling knowing where to start and blah blah blah"
+    age: "20",
+    major: "Computer Science",
+    degree: "Bachelor's, McCormick School of Engineering",
+    institution: "Northwestern University",
+    company: "Mersive Technologies",
+    position: "Software Development",
+    industry: "Computer Science",
+    targetindustry: "Venture Capital",
+    about: "I am a student at Northwestern university looking to transition from Computer Science to Venture Capital.  I'm interested in this space, especially in tech startup investments.  I'm looking to discuss this with any individuals who have experience with this transition, or venture experience!",
+    transitioningquestions: "Throughout my time at Northwestern, I've become worried that I'm not fully fit to code for the rest of my life.  Venture capital has always interested me because my father is currently employed to Liberty Global doing venture work.  I've always been a tech enthusiast and feel that I can predict and understand new tech trends well, which could make me a very good fit for the venture business and investing in tech startups.",
+    whyIndustry: "I would mostly like to speak to Monarch Connections about what skill's they learned throughout the transition process, and what their first step was in making such a drastic change.  Because I'm studying computer science, it's tough for me to explore my options and learn the skills I need to transition to the venture scene."
 }
 
 var grayed = {
@@ -20,7 +30,8 @@ var grayed = {
 }
 
 var colored = {
-    borderColor: "#3CB54A"
+    borderColor: "#3CB54A",
+    color: "#3CB54A"
 }
 
 var graytext = {
@@ -32,6 +43,21 @@ var graytext = {
 var lineStyle = {
     marginBottom: "0"
 }
+
+var bolded = {
+    fontWeight: "bold",
+    fontStyle: "italic"
+}
+
+var school = {
+    fontWeight: "bold",
+    fontSize: "120%"
+}
+
+var school2 = {
+    fontStyle: "italic"
+}
+
 
 
 
@@ -99,14 +125,40 @@ class ProfileMain extends React.Component {
                 {profileTest.about}
             </div>
             <div className="profile-transition">
-                Journalist
+                {profileTest.industry}
                 <img className="transition-arrow" src={arrow}/>
-                Law
+                {profileTest.targetindustry}
                 <hr style={lineStyle}/>
                 <div style={graytext}> This section shows the industry 
                 where the user previously worked in, and the industry he/she 
                 is interested in.  This helps Monarch match individuals with similar interests.
                 </div>
+            </div>
+            <div className="profile-section">
+                <h3 className=""> Transition </h3>
+                <hr style={colored}/>
+                <h4 className="subtitle">Why are you looking to change careers?  What are your interests, motivations and fears about doing so?</h4>
+                <hr className="subtitleLine"/>
+                {profileTest.transitioningquestions}
+                <br/>
+                <br/>
+                <h4 className="subtitle">What would you like to learn from Monarch's connections?</h4>
+                <hr className="subtitleLine"/>
+                {profileTest.whyIndustry}
+            </div>
+            <div className="profile-section" style={{top: "-50px"}}>
+                <h3 className=""> Education & Work Experience </h3>
+                <hr style={colored}/>
+                <span style={school}>{profileTest.institution}</span>
+                <br/>
+                <span style={school2}>{profileTest.degree}</span>
+                <br/>
+                <span style={colored}>{profileTest.major}</span>
+                
+                <hr/>
+                <span style={bolded}> Company</span> <span style={colored}>––</span> {profileTest.company}
+                <br/>
+                <span style={bolded}> Position</span> <span style={colored}>––</span> {profileTest.position}
             </div>
         </div>
         )
