@@ -4,7 +4,8 @@ import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'rea
 import './signup.css';
 import './wizard.css';
 import SignUpForm from './signupform';
-import StepZilla from 'react-stepzilla'
+import StepZilla from 'react-stepzilla';
+import axios from 'axios';
 
 const steps = [
     {name:'About', component: <SignUpForm />},
@@ -30,6 +31,8 @@ export default class Wizard extends Component {
         this.handleTargetIndustry = this.handleTargetIndustry.bind(this);
         this.handleWhyIndustry = this.handleWhyIndustry.bind(this);
         this.handleTransitioningQuestions = this.handleTransitioningQuestions.bind(this);
+        this.getUserName = this.getUserName.bind(this);
+        this.submitTest = this.submitTest.bind(this);
     
         this.state = {
             name: '',
@@ -108,8 +111,52 @@ export default class Wizard extends Component {
         this.setState({ transitioningQuestions: e.target.value });
     }
 
+    getUserName() {
+        axios.get('/users/getusername')
+        .then(function (res) {
+            console.log(res.data.username);
+            return res.data.username;
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+    }
+
     submitTest() {
-        console.log(this.state)
+        axios.post('/users/addprofile', {
+            username: this.getUserName(),
+            name: this.state.name,
+            age: this.state.age,
+            location: {
+                city: this.state.city,
+                state: this.state.state
+            },
+            education: [{
+                major: this.state.major,
+                degree: this.state.degree,
+                institution: this.state.institution
+            }],
+            experience: [{
+                company: this.state.company,
+                position: this.state.position
+            }],
+            industries: {
+                currentindustry: this.state.industry,
+                targetindustry: this.state.targetIndustry
+            },
+            about: {
+                about: this.state.about,
+                whyindustry: this.state.whyIndustry,
+                transitioningquestions: this.state.transitioningQuestions
+            },
+            mentor: true
+          })
+        .then(function(res) {
+            console.log(res);
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
     }
 
   render() {
@@ -244,7 +291,8 @@ export default class Wizard extends Component {
                 placeholder="textarea"/>
 
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitTest()}>Submit</Button>
+                <Button bsSize="large" className="submit" onClick={this.submitTest}>Submit</Button>
+                <Button bsSize="large" className="submit" onClick={this.getUserName}>Submit</Button>
                 </div>
             </form>
       </div>

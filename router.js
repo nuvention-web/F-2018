@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 
-import {createUser, logUser, getUserProfile, addUserProfile} from './controllers/users';
+import {createUser, logUser, getUserProfile, addUserProfile, getUserName, deleteProfileByUserName} from './controllers/users';
 
 //const path = require('path');
 
@@ -18,6 +18,10 @@ router.route('/users/login').post(logUser);
 
 router.route('/users/profile').get(getUserProfile);
 
-router.route('/users/addprofile').post(addUserProfile)
+router.route('/users/getusername').get(getUserName);
+
+router.route('/users/addprofile').post(addUserProfile);
+
+router.route('/users/deleteprofile').post(deleteProfileByUserName);
 
 export default router;

@@ -75,6 +75,19 @@ export const getUserProfile = (req, res, next) => {
     });
 };
 
+export const getUserName = (req, res, next) => {
+    User.findOne()
+    .where('_id')
+    .equals(req.session.userId)
+    .exec(function(err, user) {
+      if (err) {
+        res.status(400).send({message: err.message});
+      } else {
+        res.send({username: user.username});
+      }
+    });
+}
+
 export const addUserProfile = (req, res, next) => {
     var newProfile = new UserProfile(req.body);
     console.log(newProfile);
@@ -86,3 +99,25 @@ export const addUserProfile = (req, res, next) => {
       res.status(400).send({message: err.message});
     })
 };
+
+export const updateProfileByUserName = (req, res, next) => {
+    UserProfile.update({'username':req.body.username},{$set: req.body})
+    .exec(function(err, articles) {
+      if (err) {
+        res.status(400).send({message: err.message});
+      } else {
+        res.send('update by username successful');
+      }
+    });
+}
+
+export const deleteProfileByUserName = (req, res, next) => {
+    UserProfile.remove({'username':req.body.username})
+    .exec(function(err, articles) {
+      if (err) {
+        res.status(400).send({message: err.message});
+      } else {
+        res.send('delete by username successful');
+      }
+    })
+}

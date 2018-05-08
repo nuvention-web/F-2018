@@ -8,9 +8,7 @@ var profileSchema = new mongoose.Schema({
       trim: true
     },
     name: {
-        first: String,
-        middle: String,
-        last: String
+        type: String
     },
     age: Number,
     location: {
@@ -24,12 +22,18 @@ var profileSchema = new mongoose.Schema({
     }],
     experience: [{
         company: String,
-        position: String,
-        industry: String
+        position: String
     }],
-    targetindustry: {
-        type: String,
-    }
+    industries: {
+        currentindustry: String,
+        targetindustry: String
+    },
+    about: {
+        about: String,
+        whyindustry: String,
+        transitioningquestions: String
+    },
+    mentor: Boolean
   });
 
 export default mongoose.model('UserProfile', profileSchema);
