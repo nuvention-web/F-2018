@@ -3,6 +3,8 @@ import Nav from './nav'
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
+import {Link} from 'react-router-dom';
 
 
 export default class SignUpForm extends Component {
@@ -88,7 +90,7 @@ export default class SignUpForm extends Component {
                     <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock>
                 </FormGroup>
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitUser} href="/edit">Submit</Button>
+                <Link to="/edit"><Button bsSize="large" className="submit" onClick={this.submitUser}>Submit</Button></Link>
                 </div>
             </form>
       </div>
