@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+import AppNav from './appnav'
 import Nav from './nav'
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel,} from 'react-bootstrap'
-import SignUpForm from './signupform'
-import AppNav from './appnav'
+import Spinner from './spinner'
+import Nav2 from './nav2'
 
 
 
-export default class Signup extends Component {
+export default class Dashboard extends Component {
   render() {
     return (
       <div id="contact">
-        <AppNav/>
-        <SignUpForm/>
+        <Nav2/>
+        <Spinner/>
       </div>
     );
   }
