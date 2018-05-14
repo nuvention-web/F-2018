@@ -6,6 +6,8 @@ import './wizard.css';
 import SignUpForm from './signupform';
 import StepZilla from 'react-stepzilla';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
+import {Link} from 'react-router-dom';
 
 const steps = [
     {name:'About', component: <SignUpForm />},
@@ -31,7 +33,8 @@ export default class Wizard extends Component {
         this.handleTargetIndustry = this.handleTargetIndustry.bind(this);
         this.handleWhyIndustry = this.handleWhyIndustry.bind(this);
         this.handleTransitioningQuestions = this.handleTransitioningQuestions.bind(this);
-        this.getUserName = this.getUserName.bind(this);
+        this.submitUserProfile = this.submitUserProfile.bind(this);
+        //this.updateUsername = this.updateUsername.bind(this);
         this.submitTest = this.submitTest.bind(this);
     
         this.state = {
@@ -115,21 +118,35 @@ export default class Wizard extends Component {
         this.setState({ about: e.target.value });
     }
 
-    getUserName() {
+    submitUserProfile() {
+        //let currentComponent = this;
         axios.get('/users/getusername')
-        .then(function (res) {
-            console.log(res.data.username);
-            return res.data.username;
+        .then((res) => {
+            let username = res.data.username;
+            console.log(username);
+            //currentComponent.setState({username: res.data.username});
+            return (username);
         })
+        .then((username) => {
+            this.submitTest(username);
+        })
+        //.then(this.submitTest())
         .catch(function (err) {
             console.log(err);
         });
     }
 
+    // updateUsername(username) {
+    //     this.setState({username: username});
+    //     console.log(this.state.username);
+    // }
 
-    submitTest() {
+
+    submitTest(username) {
+        //this.getUserName();
+        console.log(username);
         axios.post('/users/addprofile', {
-            username: this.getUserName(),
+            username: username,
             name: this.state.name,
             age: this.state.age,
             location: {
@@ -613,7 +630,8 @@ export default class Wizard extends Component {
                 <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.</HelpBlock>
 
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitTest}>Submit</Button>
+                <Link to="/profile"><Button bsSize="large" className="submit" onClick={this.submitUserProfile}>Submit</Button></Link>
+                {/*<Button bsSize="large" className="submit" onClick={this.getUserName}>Test</Button>*/}
                 </div>
             </form>
       </div>

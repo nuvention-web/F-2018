@@ -17,8 +17,10 @@ export const createUser = (req, res, next) => {
             return next(err)
           } else {
               req.session.userId = user._id;
-              //res.send("user created and saved to DB")
-              return res.redirect('/users/profile');
+              req.session.save();
+              //console.log(req.session);
+              res.send("user created and saved to DB")
+              //return res.redirect('/users/profile');
           }
         });
       }
@@ -38,9 +40,10 @@ export const logUser = (req, res, next) => {
             return next(err);
           } else {
             req.session.userId = user._id;
-            //res.send("authentication successful");
+            req.session.save();
+            res.send("authentication successful");
             console.log("authentication successful");
-            return res.redirect('/users/profile');
+            //return res.redirect('/users/profile');
           }
         });
       } else {
@@ -76,6 +79,7 @@ export const getUserProfile = (req, res, next) => {
 };
 
 export const getUserName = (req, res, next) => {
+    //console.log(req.session);
     User.findOne()
     .where('_id')
     .equals(req.session.userId)
@@ -83,6 +87,7 @@ export const getUserName = (req, res, next) => {
       if (err) {
         res.status(400).send({message: err.message});
       } else {
+        console.log(user);
         res.send({username: user.username});
       }
     });
