@@ -369,6 +369,7 @@ export default class Wizard extends Component {
                         <option value="Internet">Internet</option>
                         <option value="Investment Banking/Venture">Investment Banking/Venture</option>
                         <option value="Investment Management">Investment Management</option>
+                        <option value="Journalism">Dairy</option>
                         <option value="Judiciary">Judiciary</option>
                         <option value="Law Enforcement">Law Enforcement</option>
                         <option value="Law Practice">Law Practice</option>
