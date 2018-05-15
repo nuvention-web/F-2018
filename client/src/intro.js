@@ -17,7 +17,7 @@ class Head extends React.Component {
         <div className="title-box">
           <h1> MONARCH </h1>
           {/* <hr/> */}
-          <h5>Career Reinvention is Always Within Your Reach.</h5>
+          <h5> Where Conversations Inspire Your Career Journey.</h5>
         </div>
       </div>
     )

@@ -22,7 +22,7 @@ class Timeline extends React.Component {
   render() {
     return (
         <div className="timeline">
-            <h1 className="timeline-text">How <span style={spanStyle}>It</span> Works </h1>
+            <h1 className="timeline-text"> How <span style={spanStyle}>It</span> Works </h1>
             <h3 className="timeline-sub">A Step by Step Process</h3>
         <VerticalTimeline className="step-line">
           <VerticalTimelineElement
@@ -31,29 +31,18 @@ class Timeline extends React.Component {
             icon="1">
             <h3 className="vertical-timeline-element-title">Sign Up</h3>
             <p className="timeline-body">
-              Simply login and answer a couple questions about yourself 
-              and your career journey to fill out your profile.
+              Simply login with your LinkedIn credentials and answer a couple questions about yourself for your profile.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work" 
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="2">
-            <h3 className="vertical-timeline-element-title">Await a Match</h3>
+            <h3 className="vertical-timeline-element-title">Browse Connections</h3>
             <p className="timeline-body">
-            Within 72 hours, you will be matched with either a mentee or mentor who 
-            has experienced the same career transition you are considering for a 
-            30-minute video call depending on where you are in your journey.
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="6">
-            <h3 className="vertical-timeline-element-title">Check Your Progress</h3>
-            <p className="timeline-body">
-            While you wait, check out how the matching is going on your personal 
-            dashboard and feel free to edit your profile in the meantime!
+            After 24-48 hours, you will be matched with a mentor who has experienced 
+            the same career transition you are considering for a 30-minute video call 
+            to discuss your journey.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -62,19 +51,19 @@ class Timeline extends React.Component {
             icon="3">
             <h3 className="vertical-timeline-element-title">Find a Time</h3>
             <p className="timeline-body">
-            Once a match is made, Monarch will send you and your match an email 
-            with a Google Hangouts link to connect you both to find a mutually 
-            agreeable time to chat.
+            Once a time is agreed upon using Monarch's own Doodle page, Monarch will send you and your 
+            mentor a calendar invite with a link to a Google Hangouts call and access to each other’s emails 
+            if you need to communicate.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             iconStyle={{ background: '#3CB54A', color: '#fff' }} 
             icon="4">
-            <h3 className="vertical-timeline-element-title">Video Call</h3>
+            <h3 className="vertical-timeline-element-title">Video Conferencing</h3>
             <p className="timeline-body">
-            Meet your match for 30 minutes to learn about their career journey and 
-            what insider tips they have to share.
+            Meet your mentor for 30 minutes to learn all about their experience switching into 
+            their new career and what insider tips they have to share before you take the leap.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -87,6 +76,17 @@ class Timeline extends React.Component {
             helped you along your career journey. So, after your conversation, 
             we just ask you leave your mentor a few words of gratitude for their 
             time and advice.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
+            icon="6">
+            <h3 className="vertical-timeline-element-title">Network</h3>
+            <p className="timeline-body">
+            Your Monarch experience isn’t over just yet! We will recommend other mentors for 
+            you to speak with, and you will have access to browsing our community, so you can 
+            find other people who can help you along your journey of reinvention.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>

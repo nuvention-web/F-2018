@@ -74,21 +74,21 @@
 }
 
 .SignUp {
-    padding: 10px;
+    padding: 5px;
     background-color: #3CB54A;
     color: white;
-    font-size: 125%;
+    font-size: 150%;
     font-family: 'Josefin Sans', sans-serif;
-    border-radius: 50px;
+    border-radius: 10%;
 }
 
 .SignUp:hover {
-    padding: 10px;
+    padding: 5px;
     background-color: #3CB54A;
     color: white;
-    font-size: 125%;
+    font-size: 150%;
     font-family: 'Josefin Sans', sans-serif;
-    border-radius: 50px;
+    border-radius: 10%;
 }
 
 .navbar-right {
