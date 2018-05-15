@@ -8,32 +8,32 @@ var profileSchema = new mongoose.Schema({
       trim: true
     },
     name: {
-        first: String,
-        middle: String,
-        last: String
-    },
-    gender: {
         type: String
     },
     age: Number,
+    location: {
+        city: String,
+        state: String
+    },
     education: [{
-        type: String,
-        detail: {
-            major: String,
-            degree: String,
-            institution: String
-        }
+        major: String,
+        degree: String,
+        institution: String
     }],
     experience: [{
-        type: String,
-        detail: {
-            company: String,
-            position: String,
-            dateofjoin: Date,
-            dateofleave: Date,
-            location: String
-        }
-    }]
+        company: String,
+        position: String
+    }],
+    industries: {
+        currentindustry: String,
+        targetindustry: String
+    },
+    about: {
+        about: String,
+        whyindustry: String,
+        transitioningquestions: String
+    },
+    mentor: Boolean
   });
 
 export default mongoose.model('UserProfile', profileSchema);

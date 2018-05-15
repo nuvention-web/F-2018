@@ -64,5 +64,9 @@ data/
 
 client/build/
 
+client/package-lock.json
+
+package-lock.json
+
 dist/
 
