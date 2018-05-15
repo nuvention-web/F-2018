@@ -60,6 +60,8 @@ export const getUserProfile = (req, res, next) => {
     .exec(function(err, user) {
       if (err) {
         res.status(400).send({message: err.message});
+      } else if (user == null) {
+        res.status(400).send("username is null");
       } else {
         // console.log(user)
         // console.log(req.session.userId)
