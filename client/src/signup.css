@@ -26,16 +26,20 @@
 
 .submit {
     background-color: #3CB54A;
+    width: 150px;
     color: white;
     margin: 0 auto;
+    border-radius: 50px;
 }
 
 .submit:hover {
     background-color: #3CB54A;
+    width: 150px;
     color: white;
     margin: 0 auto;
     margin-top: 25px;
     margin-bottom: 25px;
+    border-radius: 50px;
 }
 
 .submit-container {

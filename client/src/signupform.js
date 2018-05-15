@@ -63,14 +63,14 @@ export default class SignUpForm extends Component {
         <div className="img-container">
             <h1 className="formTitle">Get Started.</h1>
             <form className="form">
-                    <ControlLabel className="left-aligned">Username</ControlLabel>
+                    <ControlLabel className="left-aligned" style={{marginTop: "15px"}}>Username</ControlLabel>
                     <FormControl
                         type="text"
                         value={this.state.username}
                         placeholder="Enter Username"
                         onChange={this.handleName}/>
                     <FormControl.Feedback />
-                    <ControlLabel className="left-aligned">Email</ControlLabel>
+                    <ControlLabel className="left-aligned" style={{marginTop: "15px"}}>Email</ControlLabel>
                     <FormControl
                         type="text"
                         value={this.state.email}
@@ -80,7 +80,7 @@ export default class SignUpForm extends Component {
                     <FormGroup
                 controlId="formBasicText"
                 validationState={this.getValidationState()}>
-                    <ControlLabel className="left-aligned">Password</ControlLabel>
+                    <ControlLabel className="left-aligned" style={{marginTop: "15px"}}>Password</ControlLabel>
                     <FormControl
                         type="password"
                         value={this.state.password}

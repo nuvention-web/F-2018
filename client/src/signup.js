@@ -10,7 +10,6 @@ export default class Signup extends Component {
   render() {
     return (
       <div id="contact">
-        <Nav/>
         <SignUpForm/>
       </div>
     );

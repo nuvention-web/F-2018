@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './steps.css';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import { Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 // import 'react-vertical-timeline-component/style.min.css';
 
 var spanStyle = {
@@ -39,7 +40,7 @@ class Steps extends React.Component {
         <h3 className="intro-sub">   
           <span style={megaBold}>Monarch is where professionals go to find the confidence they need to reinvent their career. </span>
         </h3>
-        <Button className="signupButton" bsSize="large" href="/signup"> Sign Up Now </Button>
+          <Link to="/signup"><Button className="signupButton" bsSize="large" href="/signup"> Sign Up Now </Button></Link>
       </div>
     )
   }
