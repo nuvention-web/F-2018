@@ -37,7 +37,7 @@ class Spinner extends React.Component {
                 </Link>
             </div>
             <div className="quotes">
-                "Just when the catterpillar thought the world was over, it became a butterfly."
+                "Just when the caterpillar thought the world was over, it became a butterfly."
             </div>
         </div>
 

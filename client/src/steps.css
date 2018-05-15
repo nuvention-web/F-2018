@@ -57,6 +57,7 @@ ul {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 150%;
     color: white;
+    border-radius: 50px;
 }
 
 .signupButton:hover{
@@ -67,4 +68,5 @@ ul {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 150%;
     color: white;
+    border-radius: 50px;
 }
