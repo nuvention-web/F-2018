@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
     "express-session": "^1.15.2",
     "mongoose": "^4.10.8",
-    "cors": "^2.8.4",
-    "body-parser": "^1.17.2",
     "node-fetch": "^2.0.0",
-    "concurrently": "^3.5.0",
-    "express": "^4.16.2"
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-avatar": "^2.5.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
