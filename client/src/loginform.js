@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 var text = {
@@ -71,7 +72,7 @@ export default class LoginForm extends Component {
                     <FormControl.Feedback />
                 </FormGroup>
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitUser} href="/edit">Login</Button>
+                <Link to="/dashboard"><Button bsSize="large" className="submit" onClick={this.loginUser} href="/edit">Login</Button></Link>
                 <hr style={{marginTop: "0"}} />
                 <div style={text}> New to Monarch? <a href="/signup" className="signup-forward"> Sign up Here. </a> 
                     <br/>

@@ -131,6 +131,7 @@ class ProfileMain extends React.Component {
             this.updateProfile(data);
         })
         .catch(function (err) {
+            //this.forceUpdate();
             console.log(err);
         });
     }
@@ -190,8 +191,13 @@ class ProfileMain extends React.Component {
         }
         else {
             //sleep(1000);
-            this.getProfile();
-            return null;
+            try {
+                this.getProfile();
+                return null;
+            }
+            catch(err) {
+                this.forceUpdate();
+            }
         }
     }
 
