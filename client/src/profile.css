@@ -61,20 +61,26 @@
 }
 
 .main-profile {
-    height: 200vh;
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
     text-align: center;
+    vertical-align: top;
     margin-top: 0;
+    justify-content: space-between;
 }
 
 .profile-section {
+    vertical-align: top;
     top: -100px;
     display: inline-block;
-    width: 85vmin;
-    height: 300px;
-    margin: 0 auto;
+    width: 80vmin;
+    /* height: 300px; */
     background-color: white;
-    margin: 15px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 15px;
@@ -85,23 +91,40 @@
 
 .profile-transition {
     display: inline-block;
-    width: 70vmin;
+    width: 90vmin;
     margin: 0 auto;
+    height: 220px;
     background-color: white;
-    margin: 15px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
     padding: 15px;
     border-radius: 20px;
-    font-size: 40px;
+    font-size: 4vmin;
     font-weight: bold;
-    vertical-align: top;
+    padding-top: 35px;
 }
 
 .transition-arrow {
-    height: 50px;
-    width: 50px;
+    height: 7vmin;
+    width: 7vmin;
     display: inline;
     margin-left: 15px;
     margin-right: 15px;
 
+}
+
+.subtitle {
+    font-weight: bold;
+    font-style: italic;
+    margin: 0 auto;
+    font-size: 90%;
+    padding: 15px;
+    padding-bottom: 0;
+}
+
+.subtitleLine {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 

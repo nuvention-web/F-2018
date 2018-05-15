@@ -1,35 +1,29 @@
 import React, { Component } from "react";
-import Nav from './nav'
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
 import axios from 'axios';
-axios.defaults.withCredentials = true;
 import {Link} from 'react-router-dom';
 
 
-export default class SignUpForm extends Component {
+var text = {
+    fontSize: "18px",
+    marginTop: "20px"
+}
+
+export default class LoginForm extends Component {
 
     constructor(props, context) {
         super(props, context);
     
         this.handleChange = this.handleChange.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
-        this.handleName = this.handleName.bind(this);
-        this.submitUser = this.submitUser.bind(this);
+        this.loginUser = this.loginUser.bind(this);
     
         this.state = {
             password: '',
             email: '',
-            username: ''
         };
       }
-
-    getValidationState() {
-        const length = this.state.password.length;
-        if (length > 8) return 'success';
-        else if (length > 0) return 'error';
-        return null;
-    }
     
   
     handleChange(e) {
@@ -39,16 +33,13 @@ export default class SignUpForm extends Component {
         this.setState({ email: e.target.value });
       }
 
-    handleName(e) {
-        this.setState({ username: e.target.value });
-    }
 
-    submitUser() {
+
+    loginUser() {
         console.log(this.state);
-        axios.post('/users/create', {
-            email: this.state.email,
-            username: this.state.username,
-            password: this.state.password
+        axios.post('/users/login', {
+            logemail: this.state.email,
+            logpassword: this.state.password
         })
         .then(function(res) {
             console.log(res);
@@ -61,16 +52,9 @@ export default class SignUpForm extends Component {
   render() {
     return (
         <div className="img-container">
-            <h1 className="formTitle">Get Started.</h1>
+            <h1 className="formTitle" >Welcome Back.</h1>
             <form className="form">
-                    <ControlLabel className="left-aligned">Username</ControlLabel>
-                    <FormControl
-                        type="text"
-                        value={this.state.username}
-                        placeholder="Enter Username"
-                        onChange={this.handleName}/>
-                    <FormControl.Feedback />
-                    <ControlLabel className="left-aligned">Email</ControlLabel>
+                    <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Email</ControlLabel>
                     <FormControl
                         type="text"
                         value={this.state.email}
@@ -78,19 +62,22 @@ export default class SignUpForm extends Component {
                         onChange={this.handleEmail}/>
                     <FormControl.Feedback />
                     <FormGroup
-                controlId="formBasicText"
-                validationState={this.getValidationState()}>
-                    <ControlLabel className="left-aligned">Password</ControlLabel>
+                controlId="formBasicText">
+                    <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Password</ControlLabel>
                     <FormControl
                         type="password"
                         value={this.state.password}
                         placeholder="Enter Password"
                         onChange={this.handleChange}/>
                     <FormControl.Feedback />
-                    <HelpBlock className="left-aligned">Password must be longer than 8 characters.</HelpBlock>
                 </FormGroup>
                 <div className="submit-container">
-                <Link to="/edit"><Button bsSize="large" className="submit" onClick={this.submitUser}>Submit</Button></Link>
+                <Link to="/dashboard"><Button bsSize="large" className="submit" onClick={this.loginUser} href="/edit">Login</Button></Link>
+                <hr style={{marginTop: "0"}} />
+                <div style={text}> New to Monarch? <a href="/signup" className="signup-forward"> Sign up Here. </a> 
+                    <br/>
+                    {/* <Button bsSize="large" className="submit" href="/signup">Sign Up</Button> */}
+                </div>
                 </div>
             </form>
       </div>

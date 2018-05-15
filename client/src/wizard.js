@@ -6,6 +6,8 @@ import './wizard.css';
 import SignUpForm from './signupform';
 import StepZilla from 'react-stepzilla';
 import axios from 'axios';
+axios.defaults.withCredentials = true;
+import {Link} from 'react-router-dom';
 
 const steps = [
     {name:'About', component: <SignUpForm />},
@@ -31,7 +33,8 @@ export default class Wizard extends Component {
         this.handleTargetIndustry = this.handleTargetIndustry.bind(this);
         this.handleWhyIndustry = this.handleWhyIndustry.bind(this);
         this.handleTransitioningQuestions = this.handleTransitioningQuestions.bind(this);
-        this.getUserName = this.getUserName.bind(this);
+        this.submitUserProfile = this.submitUserProfile.bind(this);
+        //this.updateUsername = this.updateUsername.bind(this);
         this.submitTest = this.submitTest.bind(this);
     
         this.state = {
@@ -115,173 +118,35 @@ export default class Wizard extends Component {
         this.setState({ about: e.target.value });
     }
 
-    getUserName() {
+    submitUserProfile() {
+        //let currentComponent = this;
         axios.get('/users/getusername')
-        .then(function (res) {
-            console.log(res.data.username);
-            return res.data.username;
+        .then((res) => {
+            let username = res.data.username;
+            console.log(username);
+            //currentComponent.setState({username: res.data.username});
+            return (username);
         })
+        .then((username) => {
+            this.submitTest(username);
+        })
+        //.then(this.submitTest())
         .catch(function (err) {
             console.log(err);
         });
     }
 
-// Accounting
-// Airlines/Aviation
-// Alternative Dispute Resolution
-// Alternative Medicine
-// Animation
-// Apparel & Fashion
-// Architecture & Planning
-// Arts & Crafts
-// Automotive
-// Aviation & Aerospace
-// Banking
-// Biotechnology
-// Broadcast Media
-// Building Materials
-// Business Supplies & Equipment
-// Capital Markets
-// Chemicals
-// Civic & Social Organization
-// Civil Engineering
-// Commercial Real Estate
-// Computer & Network Security
-// Computer Games
-// Computer Hardware
-// Computer Networking
-// Computer Software
-// Construction
-// Consumer Electronics
-// Consumer Goods
-// Consumer Services
-// Cosmetics
-// Dairy
-// Defense & Space
-// Design
-// Education Management
-// E-learning
-// Electrical & Electronic Manufacturing
-// Entertainment
-// Environmental Services
-// Events Services
-// Executive Office
-// Facilities Services
-// Farming
-// Financial Services
-// Fine Art
-// Fishery
-// Food & Beverages
-// Food Production
-// Fundraising
-// Furniture
-// Gambling & Casinos
-// Glass, Ceramics & Concrete
-// Government Administration
-// Government Relations
-// Graphic Design
-// Health, Wellness & Fitness
-// Higher Education
-// Hospital & Health Care
-// Hospitality
-// Human Resources
-// Import & Export
-// Individual & Family Services
-// Industrial Automation
-// Information Services
-// Information Technology & Services
-// Insurance
-// International Affairs
-// International Trade & Development
-// Internet
-// Investment Banking/Venture
-// Investment Management
-// Judiciary
-// Law Enforcement
-// Law Practice
-// Legal Services
-// Legislative Office
-// Leisure & Travel
-// Libraries
-// Logistics & Supply Chain
-// Luxury Goods & Jewelry
-// Machinery
-// Management Consulting
-// Maritime
-// Marketing & Advertising
-// Market Research
-// Mechanical or Industrial Engineering
-// Media Production
-// Medical Device
-// Medical Practice
-// Mental Health Care
-// Military
-// Mining & Metals
-// Motion Pictures & Film
-// Museums & Institutions
-// Music
-// Nanotechnology
-// Newspapers
-// Nonprofit Organization Management
-// Oil & Energy
-// Online Publishing
-// Outsourcing/Offshoring
-// Package/Freight Delivery
-// Packaging & Containers
-// Paper & Forest Products
-// Performing Arts
-// Pharmaceuticals
-// Philanthropy
-// Photography
-// Plastics
-// Political Organization
-// Primary/Secondary Education
-// Printing
-// Professional Training
-// Program Development
-// Public Policy
-// Public Relations
-// Public Safety
-// Publishing
-// Railroad Manufacture
-// Ranching
-// Real Estate
-// Recreational
-// Facilities & Services
-// Religious Institutions
-// Renewables & Environment
-// Research
-// Restaurants
-// Retail
-// Security & Investigations
-// Semiconductors
-// Shipbuilding
-// Sporting Goods
-// Sports
-// Staffing & Recruiting
-// Supermarkets
-// Telecommunications
-// Textiles
-// Think Tanks
-// Tobacco
-// Translation & Localization
-// Transportation/Trucking/Railroad
-// Utilities
-// Venture Capital
-// Veterinary
-// Warehousing
-// Wholesale
-// Wine & Spirits
-// Wireless
-// Writing & Editing
-    example() {
-        console.log(this.state)
-    }
+    // updateUsername(username) {
+    //     this.setState({username: username});
+    //     console.log(this.state.username);
+    // }
 
 
-    submitTest() {
+    submitTest(username) {
+        //this.getUserName();
+        console.log(username);
         axios.post('/users/addprofile', {
-            username: this.getUserName(),
+            username: username,
             name: this.state.name,
             age: this.state.age,
             location: {
@@ -765,8 +630,8 @@ export default class Wizard extends Component {
                 <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.</HelpBlock>
 
                 <div className="submit-container">
-                <Button bsSize="large" className="submit" onClick={this.submitTest}>Submit</Button>
-                <Button bsSize="large" className="submit" onClick={this.example()}>Submit</Button>
+                <Link to="/profile"><Button bsSize="large" className="submit" onClick={this.submitUserProfile}>Submit</Button></Link>
+                {/*<Button bsSize="large" className="submit" onClick={this.getUserName}>Test</Button>*/}
                 </div>
             </form>
       </div>
