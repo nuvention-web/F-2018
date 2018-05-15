@@ -21,7 +21,6 @@
     font-family: 'Open', sans-serif;
     font-weight: 300;
     font-size: 7vmax;
-    margin-bottom: 30px;
 }
 
 .submit {
@@ -30,23 +29,7 @@
     margin: 0 auto;
 }
 
-.submit:hover {
-    background-color: #3CB54A;
-    color: white;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
 .submit-container {
     text-align: center;
     margin: 0 auto;
-}
-
-.signup-forward {
-    color: #3CB54A;
-}
-
-.signup-forward:hover {
-    color: #3CB54A;
 }

@@ -15,7 +15,6 @@ const path = require('path');
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
@@ -74,8 +73,7 @@ router.get('/api', (req, res) => {
 */
 
 
-//mongoose.connect('mongodb://localhost/teamf', function(err) {
-mongoose.connect('mongodb://admin:teamf@ds217310.mlab.com:17310/teamf', function(err) {
+mongoose.connect('mongodb://localhost/teamf', function(err) {
     console.log(`Listening on port ${process.env.PORT || 8888}`);
     app.listen(process.env.PORT || 8888);
 })
