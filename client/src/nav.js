@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button } from 'react-bootstrap';
 import './nav.css';
 import logo from './static/logo.png'
+import {Link} from 'react-router-dom';
 
 class TopNav extends React.Component {
 	state = {
@@ -71,7 +72,7 @@ class TopNav extends React.Component {
 				</Nav>
 				<Nav pullRight>
 				<NavItem eventKey={1} href="/signup">
-					<span className="SignUp">Login</span>
+					<Link to="/login"><span className="SignUp">Login</span></Link>
 				</NavItem>
 				</Nav>
 			</Navbar.Collapse>

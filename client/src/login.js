@@ -9,7 +9,6 @@ export default class Login extends Component {
   render() {
     return (
       <div id="contact">
-        <AppNav/>
         <LoginForm/>
       </div>
     );
