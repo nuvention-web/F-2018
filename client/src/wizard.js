@@ -632,7 +632,7 @@ export default class Wizard extends Component {
                 <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.</HelpBlock>
 
                 <div className="submit-container">
-                <Link to="/profile"><Button bsSize="large" className="submit" onClick={this.submitUserProfile}>Submit</Button></Link>
+                <Link to="/dashboard"><Button bsSize="large" className="submit" onClick={this.submitUserProfile}>Submit</Button></Link>
                 {/*<Button bsSize="large" className="submit" onClick={this.getUserName}>Test</Button>*/}
                 </div>
             </form>
