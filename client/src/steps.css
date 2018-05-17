@@ -18,9 +18,22 @@
 
 .intro-sub {
     margin: 0 auto;
-    margin-top: 2vmax;
+    margin-top: 15px;
     line-height: 200%;
     width: 80%;
+    font-size: 2vmax;
+    font-family: 'Open Sans', sans-serif;
+}
+.intro-sub2 {
+    background-color: #3CB54A;
+    padding: 10vmax;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    line-height: 200%;
+    width: 100%;
     font-size: 2vmax;
     font-family: 'Open Sans', sans-serif;
 }
@@ -58,6 +71,9 @@ ul {
     font-size: 150%;
     color: white;
     border-radius: 50px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .signupButton:hover{
@@ -69,4 +85,51 @@ ul {
     font-size: 150%;
     color: white;
     border-radius: 50px;
+    border: none;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.column-box {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 0;
+    justify-content: space-between;
+}
+
+.core-box {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 300px;
+    display: inline-block;
+    height: 400px;
+    /* background-color: #edeeee; */
+    /* border-radius: 50px; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.core-box:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+.icon {
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 100px;
+    height: 100px;
+}
+
+.core-title {
+    font-size: 175%;
+    margin-bottom: 10px;
+}
+
+.core-text {
+    font-size: 110%;
+    padding: 20px;
+    padding-top: 5px;
 }

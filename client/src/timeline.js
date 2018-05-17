@@ -15,21 +15,29 @@ var boldStyle = {
   color: '#3CB54A'
 }
 
-
+var iconStyle = {
+  background: "#3CB54A",
+  height: "25px",
+  width: "25px",
+  boxShadow: "none",
+  marginTop: "20px",
+  border: "5px solid white"
+}
 
 
 class Timeline extends React.Component {
   render() {
     return (
         <div className="timeline">
-            <h1 className="timeline-text">How <span style={spanStyle}>It</span> Works </h1>
-            <h3 className="timeline-sub">A Step by Step Process</h3>
+            <h1 className="timeline-text">How It Works </h1>
+            {/* <h3 className="timeline-sub">A Step by Step Process</h3> */}
         <VerticalTimeline className="step-line">
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="1">
+            iconStyle={iconStyle} 
+            icon="">
             <h3 className="vertical-timeline-element-title">Sign Up</h3>
+            <hr/>
             <p className="timeline-body">
               Simply login and answer a couple questions about yourself 
               and your career journey to fill out your profile.
@@ -37,9 +45,10 @@ class Timeline extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work" 
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="2">
+            iconStyle={iconStyle}  
+            icon="">
             <h3 className="vertical-timeline-element-title">Await a Match</h3>
+            <hr/>
             <p className="timeline-body">
             Within 72 hours, you will be matched with either a mentee or mentor who 
             has experienced the same career transition you are considering for a 
@@ -48,9 +57,10 @@ class Timeline extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="6">
+            iconStyle={iconStyle}  
+            icon="">
             <h3 className="vertical-timeline-element-title">Check Your Progress</h3>
+            <hr/>
             <p className="timeline-body">
             While you wait, check out how the matching is going on your personal 
             dashboard and feel free to edit your profile in the meantime!
@@ -58,9 +68,10 @@ class Timeline extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work" 
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="3">
+            iconStyle={iconStyle}  
+            icon="">
             <h3 className="vertical-timeline-element-title">Find a Time</h3>
+            <hr/>
             <p className="timeline-body">
             Once a match is made, Monarch will send you and your match an email 
             with a Google Hangouts link to connect you both to find a mutually 
@@ -69,9 +80,10 @@ class Timeline extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="4">
+            iconStyle={iconStyle} 
+            icon="">
             <h3 className="vertical-timeline-element-title">Video Call</h3>
+            <hr/>
             <p className="timeline-body">
             Meet your match for 30 minutes to learn about their career journey and 
             what insider tips they have to share.
@@ -79,9 +91,10 @@ class Timeline extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            iconStyle={{ background: '#3CB54A', color: '#fff' }} 
-            icon="5">
+            iconStyle={iconStyle} 
+            icon="">
             <h3 className="vertical-timeline-element-title">Say Thank You</h3>
+            <hr/>
             <p className="timeline-body">
             At Monarch, we believe you should nurture relationships that have 
             helped you along your career journey. So, after your conversation, 
