@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import './timeline.css';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 
 var spanStyle = {
@@ -22,6 +24,9 @@ var iconStyle = {
   boxShadow: "none",
   marginTop: "20px",
   border: "5px solid white"
+}
+var megaBold = {
+  fontWeight: 'bold'
 }
 
 
@@ -103,6 +108,12 @@ class Timeline extends React.Component {
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
+        <h3 className="intro-sub2" style={{paddingBottom: "15"}}>   
+          Looking to Transition Careers? <span style={megaBold}>Sign Up with Monarch</span>.
+          <div>
+            <Link to="/signup"><Button className="signupBottom" bsSize="large" href="/signup"> Sign Up Now </Button></Link>
+          </div>
+        </h3>
         </div>
     )
   }

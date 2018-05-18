@@ -10,29 +10,53 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    height: 50%;
+    width: 45vmax;
+    height: 60%;
+    background-color: white;
+    padding: 30px;
+    padding-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .formTitle {
-    padding-top: 10vh;
+    padding: 10px;
     text-align: center;
-    color: #3CB54A;
+    color: white;
     font-family: 'Open', sans-serif;
+    background-color: #3CB54A;
     font-weight: 300;
-    font-size: 7vmax;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin-top: 0;
+    margin-top: -65px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 25px;
 }
 
-.submit {
+.submit-signup {
     background-color: #3CB54A;
     width: 200px;
     color: white;
     margin: 0 auto;
+    margin-bottom: 25px;
     border-radius: 50px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.submit:hover {
+.submit-signup:hover {
+    background-color: #3CB54A;
+    width: 200px;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.submit-login {
     background-color: #3CB54A;
     width: 200px;
     color: white;
@@ -40,6 +64,21 @@
     margin-top: 25px;
     margin-bottom: 25px;
     border-radius: 50px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.submit-login:hover {
+    background-color: #3CB54A;
+    width: 200px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .submit-container {
@@ -53,4 +92,8 @@
 
 .signup-forward:hover {
     color: #3CB54A;
+}
+
+.has-feedback label~.form-control-feedback {
+    top: 40px;
 }
