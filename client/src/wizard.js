@@ -14,6 +14,10 @@ const steps = [
     {name:'about2', component: <SignUpForm />}
 ]
 
+var space = {
+    marginTop: "20px"
+}
+
 export default class Wizard extends Component {
 
     constructor(props, context) {
@@ -185,7 +189,7 @@ export default class Wizard extends Component {
     return (
         <div className="img-container">
             <h1 className="wizardTitle">Tell Us a Bit About You.</h1>
-            <form className="form">
+            <form className="edit-form">
                     <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Name</ControlLabel>
                     <FormControl
                         type="text"
@@ -369,6 +373,7 @@ export default class Wizard extends Component {
                         <option value="Internet">Internet</option>
                         <option value="Investment Banking/Venture">Investment Banking/Venture</option>
                         <option value="Investment Management">Investment Management</option>
+                        <option value="Journalism">Journalism</option>
                         <option value="Judiciary">Judiciary</option>
                         <option value="Law Enforcement">Law Enforcement</option>
                         <option value="Law Practice">Law Practice</option>
@@ -522,6 +527,7 @@ export default class Wizard extends Component {
                         <option value="Internet">Internet</option>
                         <option value="Investment Banking/Venture">Investment Banking/Venture</option>
                         <option value="Investment Management">Investment Management</option>
+                        <option value="Journalism">Journalism</option>
                         <option value="Judiciary">Judiciary</option>
                         <option value="Law Enforcement">Law Enforcement</option>
                         <option value="Law Practice">Law Practice</option>
@@ -630,7 +636,7 @@ export default class Wizard extends Component {
                 <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.</HelpBlock>
 
                 <div className="submit-container">
-                <Link to="/profile"><Button bsSize="large" className="submit" onClick={this.submitUserProfile}>Submit</Button></Link>
+                <Link to="/dashboard"><Button bsSize="large" className="submit-signup" onClick={this.submitUserProfile} style={space}>Submit</Button></Link>
                 {/*<Button bsSize="large" className="submit" onClick={this.getUserName}>Test</Button>*/}
                 </div>
             </form>

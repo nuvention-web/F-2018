@@ -1,5 +1,7 @@
 import User from '../models/user';
 import UserProfile from '../models/userprofile';
+import {csvReadStream, mongooseToCsv} from 'mongoose-to-csv';
+import fastCsv from 'fast-csv';
 
 export const createUser = (req, res, next) => {
     console.log('creating user')
@@ -88,6 +90,8 @@ export const getUserName = (req, res, next) => {
     .exec(function(err, user) {
       if (err) {
         res.status(400).send({message: err.message});
+      } else if (user == null) {
+        res.status(400).send("username is null");
       } else {
         console.log(user);
         res.send({username: user.username});
@@ -127,4 +131,39 @@ export const deleteProfileByUserName = (req, res, next) => {
         res.send('delete by username successful');
       }
     })
+}
+
+export const writeCSV = (req, res, next) => {
+    // UserProfile.find({}).exec()
+    //   .then(function(docs) {
+    //     console.log(docs)
+    //     UserProfile.csvReadStream(docs)
+    //       .pipe(fs.createWriteStream('userprofiles.csv'));
+    //     })
+    //   .then(res.send('write to CSV complete'))
+    const cursor = UserProfile.find();
+    const transformer = (doc) => {
+      return {
+          'username': doc.username,
+          'name': doc.name,
+          'age': doc.age,
+          'city': doc.location.city,
+          'state': doc.location.state,
+          'major': doc.education.major,
+          'degree': doc.education.degree,
+          'institution': doc.education.institution,
+          'current industry': doc.industries.currentindustry,
+          'target industry': doc.industries.targetindustry,
+          'about': doc.about.about,
+          'why indstry': doc.about.whyindustry,
+          'transitioning questions': doc.about.transitioningquestions,
+          'mentor': doc.mentor
+      };
+    }
+    const filename = 'userprofiles.csv';
+    res.setHeader('Content-disposition', `attachment; filename=${filename}`);
+    res.writeHead(200, { 'Content-Type': 'text/csv' });
+    res.flushHeaders();
+    var csvStream = fastCsv.createWriteStream({headers: true}).transform(transformer)
+    cursor.stream().pipe(csvStream).pipe(res);
 }

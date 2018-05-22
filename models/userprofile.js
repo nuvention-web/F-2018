@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import mongooseToCsv from 'mongoose-to-csv';
 
 var profileSchema = new mongoose.Schema({
     username: {
@@ -35,5 +36,18 @@ var profileSchema = new mongoose.Schema({
     },
     mentor: Boolean
   });
+
+  profileSchema.plugin(mongooseToCsv, {
+      headers: 'Monarch user profiles',
+      constraints: {
+          'username': 'username',
+          'name': 'name',
+          'age': 'age',
+          'city': 'location.city'
+      },
+      virtuals: {
+          
+      }
+  })
 
 export default mongoose.model('UserProfile', profileSchema);

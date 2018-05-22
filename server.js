@@ -9,7 +9,11 @@ var session = require ('express-session');
 import router from './router';
 const app = express();
 const path = require('path');
+var sslRedirect = require('heroku-ssl-redirect')
 
+
+
+app.use(sslRedirect());
 
 
 app.use(function(req, res, next) {
