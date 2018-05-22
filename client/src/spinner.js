@@ -33,7 +33,7 @@ class Spinner extends React.Component {
             <div style={text}> Our team of energetic butteflies are working hard to find a perfect match. Check your email soon. </div>
             <div className="profileview">
                 <Link to="/profile">
-                    <Button bsSize="large" className="submit" onClick={this.submitUser}>View Your Profile</Button>
+                    <Button bsSize="large" className="submit-signup" onClick={this.submitUser}>View Your Profile</Button>
                 </Link>
             </div>
             <div className="quotes">

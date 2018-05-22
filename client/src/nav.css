@@ -6,7 +6,9 @@
     font-weight: bold;
     font-family: 'Philosopher', sans-serif;
     border-bottom:  none;
-    box-shadow: 1px 1px 1px #546D64;
+	-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
     margin: 0;
     border-radius: 0%;
 }

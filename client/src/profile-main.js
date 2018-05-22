@@ -8,7 +8,7 @@ import image from './static/shutterstock_520402930.jpg'
 import arrow from './static/right-arrow.png'
 // import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios';
-
+import {Redirect} from 'react-router';
 // var profileTest = {
 //     name: "Drew Parsons",
 //     hometown: "Denver, CO",
@@ -192,11 +192,10 @@ class ProfileMain extends React.Component {
         else {
             //sleep(1000);
             try {
-                this.getProfile();
-                return null;
+                return(<Redirect to="/login"/>)
             }
             catch(err) {
-                this.forceUpdate();
+                return(<Redirect to="/login"/>)
             }
         }
     }
