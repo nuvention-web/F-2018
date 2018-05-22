@@ -15,6 +15,11 @@ var imageStyle = {
     backgroundImage: `url(${image})`
   }
 
+var formStyle = {
+    marginTop: "35px",
+    paddingBottom: "15px",
+}
+
 export default class LoginForm extends Component {
 
     constructor(props, context) {
@@ -56,10 +61,10 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-        <div className="img-container" style={imageStyle}>
+        <div className="img-container-signup" style={imageStyle}>
             <div className="form">
                 <h1 className="formTitle" >Welcome Back.</h1>
-                <form>
+                <form style={formStyle}>
                         <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Email</ControlLabel>
                         <FormControl
                             type="text"

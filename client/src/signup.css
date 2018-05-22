@@ -1,9 +1,19 @@
-.img-container {
+
+.img-container-signup {
     width: 100%;
     bottom: 0px;
     height: 100vh;
     background-size: cover;
 }
+
+.img-container-signup:before {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
 
 .form {
     position: absolute;
@@ -17,6 +27,11 @@
     padding-top: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.form-field {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .formTitle {
@@ -96,4 +111,9 @@
 
 .has-feedback label~.form-control-feedback {
     top: 40px;
+}
+
+.edit-form {
+    width: 80vmin;
+    margin: 0 auto;
 }

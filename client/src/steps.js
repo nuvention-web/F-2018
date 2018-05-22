@@ -27,38 +27,39 @@ var megaBold = {
 
 
 
+
 class Steps extends React.Component {
+
+
   render() {
     return (
       <div className="steps"> 
-        <h1 className="intro-text"> Who Are We?</h1>
+        <h1 className="intro-text">Find the Confidence to Reinvent Your Career.</h1>
         {/* <h3 className="intro-sub">We believe a career is a journey where reinvention is always within your reach, 
           and <span style={boldStyle}>relationships </span>have the power to inspire each step along the way.
         </h3> */}
-        <h3 className="intro-sub">
-          At Monarch, our mission is to connect you to people who will empower you to make the leap from <span style={boldStyle}>Plan A to Plan B </span>. 
-          You will be matched with a professional who bridges both the career you are leaving and the one you are considering. 
-          Speaking with someone who has <span style={boldStyle}>walked in your shoes </span> will give you a clearer idea of your next step and how to get there.
+        <h3 className="intro-sub" id="intro">
+          <span style={boldStyle}>Monarch helps career switchers connect with other professionals to make the leap to a new career easy.</span>
         </h3>
-        <hr/>
+        {/* <hr/> */}
         <div className="column-box">
-          <div className="core-box">
-            <img src={img1} className="icon"/>
-            <hr/>
-            <div className="core-title">One-on-One</div>
-            <div className="core-text">Engage in a face-to-face video conference with industry workers that will guide you through your career transition.</div>
-          </div>
           <div className="core-box">
             <img src={img2} className="icon"/>
             <hr/>
-            <div className="core-title">Network</div>
-            <div className="core-text">At Monarch, we know that relationships matter. Connect with individuals and expand your powerful network before making the leap.</div>
+            <div className="core-title">Connect</div>
+            <div className="core-text">Get matched with professionals who bridge both the career you are leaving and the one you are considering, so you can confidently make the leap.</div>
+          </div>
+          <div className="core-box">
+            <img src={img1} className="icon"/>
+            <hr/>
+            <div className="core-title">Connect</div>
+            <div className="core-text">Relationships matter. Speak with professionals who understand your career journey and get an honest outlook on your career switch.</div>
           </div>
           <div className="core-box">
             <img src={img3} className="icon"/>
             <hr/>
             <div className="core-title">Transition</div>
-            <div className="core-text">Make your next career switch with ease by gaining knoledgable information from individuals already working in your next career.</div>
+            <div className="core-text">Take a closer step toward your next career by speaking to someone who has walked in your shoes. </div>
           </div>
         </div>
         <h3 className="intro-sub2">   

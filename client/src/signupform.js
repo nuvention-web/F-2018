@@ -15,7 +15,7 @@ var imageStyle = {
 
 var formStyle = {
     marginTop: "35px",
-    paddingBottom: "15px"
+    paddingBottom: "15px",
 }
 
 
@@ -70,9 +70,10 @@ export default class SignUpForm extends Component {
         })
     }
 
+
   render() {
     return (
-        <div className="img-container" style={imageStyle}>
+        <div className="img-container-signup" style={imageStyle}>
             <div className="form">
                 <h1 className="formTitle">Get Started.</h1>
                 <form style={formStyle}>
