@@ -73,10 +73,12 @@ class ProfileMain extends React.Component {
         super(props);
         this.getProfile = this.getProfile.bind(this);
         this.updateProfile = this.updateProfile.bind(this);
+        this.updateTried = this.updateTried.bind(this);
 
         this.state = {
             retrieved: false,
-            profile: null
+            profile: null,
+            tried: false
         }
     }
 
@@ -140,6 +142,10 @@ class ProfileMain extends React.Component {
         this.setState({profile: data, retrieved: true});
     }
 
+    updateTried() {
+        this.setState({tried: true});
+    }
+
 
     render() {
         if (this.state.retrieved && this.state.profile != null) {
@@ -189,15 +195,28 @@ class ProfileMain extends React.Component {
             </div>
             )
         }
+        else if (this.state.tried) {
+            return(<Redirect to="/login"/>)
+        }
         else {
             //sleep(1000);
             try {
-                return(<Redirect to="/login"/>)
+                this.getProfile();
+                return null;
             }
             catch(err) {
                 return(<Redirect to="/login"/>)
             }
         }
+
+        // else {
+        //     try {
+        //         return(<Redirect to="/login"/>)
+        //     }
+        //     catch(err) {
+        //         return(<Redirect to="/login"/>)
+        //     }
+        // }
     }
 
 }

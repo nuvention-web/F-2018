@@ -66,7 +66,7 @@ class ProfileTop extends React.Component {
             <div className="top-color" style={imageStyle}/>
                 <div className="avatar">
                 {/* facebookId="100000473157150" */}
-                    <Avatar name={this.state.profile.name} round={true} size="200"/>
+                    <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
                 </div>
             <div className="profile-intro">
                 <h1 className="profile-name">{this.state.profile.name}</h1>

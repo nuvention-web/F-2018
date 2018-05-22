@@ -20,7 +20,7 @@ class Head extends React.Component {
           <h1> MONARCH </h1>
           {/* <hr/> */}
           <h5>Reinvent Your Career Today.</h5>
-          <Link to="/signup"><Button className="introButton" bsSize="large" href="/signup">Make the Leap</Button></Link>
+          <Link to="/signup"><Button className="introButton" bsSize="large" href="/signup">Start Your Journey</Button></Link>
         </div>
       </div>
     )
