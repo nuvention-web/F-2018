@@ -63,12 +63,12 @@ class AppNav extends React.Component {
 					</NavItem>
 					</Nav>
 					<Nav pullRight>
-					<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+					<NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
 						<MenuItem eventKey={3.1}></MenuItem>
-						<MenuItem eventKey={3.2}>Another action</MenuItem>
-						<MenuItem eventKey={3.3}>Search </MenuItem>
+						<MenuItem eventKey={3.2}>Profile</MenuItem>
+						<MenuItem eventKey={3.3}>Dashboard </MenuItem>
 						<MenuItem divider />
-						<MenuItem eventKey={3.3}>Separated link</MenuItem>
+						<MenuItem eventKey={3.3}>Log Out</MenuItem>
 					</NavDropdown>
 					</Nav>
 					

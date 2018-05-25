@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 class TopNav extends React.Component {
 	state = {
 		auth: false,
-		slide: "-53px",  // How much should the Navbar slide up or down
+		slide: "-60px",  // How much should the Navbar slide up or down
 		lastScrollY: 300,  // Keep track of current position in state
 	  };
 
@@ -29,7 +29,7 @@ class TopNav extends React.Component {
 		if (currentScrollY > lastScrollY) {
 		  this.setState({ slide: '0px' });
 		} else {
-		  this.setState({ slide: '-53px' });
+		  this.setState({ slide: '-60px' });
 		}
 		// this.setState({ lastScrollY: currentScrollY });
 	  };

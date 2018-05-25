@@ -13,10 +13,10 @@ import {Link} from 'react-router-dom'
 
 
 var text = {
-    fontSize: "20px",
-    marginTop: "20px",
+    fontSize: "1.5em",
     textAlign: "center",
-    padding: "15px"
+    padding: "15px",
+    paddingTop: "0"
 }
 
 class Spinner extends React.Component {
@@ -27,7 +27,7 @@ class Spinner extends React.Component {
             className="spinner"
             color={'#3CB54A'}
             loading={true}
-            size={250}/>
+            size={150}/>
             <div className="dash-title"> Matchmaking in Progress. </div>
             <hr/>
             <div style={text}> Our team of energetic butteflies are working hard to find a perfect match. Check your email soon. </div>
@@ -36,9 +36,9 @@ class Spinner extends React.Component {
                     <Button bsSize="large" className="submit-signup" onClick={this.submitUser}>View Your Profile</Button>
                 </Link>
             </div>
-            <div className="quotes">
+            {/* <div className="quotes">
                 "Just when the caterpillar thought the world was over, it became a butterfly."
-            </div>
+            </div> */}
         </div>
 
     )

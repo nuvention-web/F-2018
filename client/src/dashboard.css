@@ -1,17 +1,43 @@
-.sweet-loading {
-    padding-top: 75px;
-    align-items: center;
+
+
+.dashboard {
+    background-color: #e6ecf0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    vertical-align: top;
+    justify-content: space-between;
+    height: 100em;
 }
 
-.css-1cvgg5b {
+.sweet-loading {
+    padding-top: 25px;
+    background-color: white;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 75px;
+    display: inline-block;
+    width: 30em;
+    height: 40em;
+    /* background-color: #edeeee; */
+    /* border-radius: 50px; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.sweet-loading:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+.css-y270xv {
     margin: 0 auto;
 }
 
 .dash-title {
-    margin-top: 50px;
+    margin-top: 25px;
     text-align: center;
     /* color: #3CB54A; */
-    font-size: 7vmax;
+    font-size: 2em;
 }
 
 .profileview {
@@ -29,4 +55,45 @@
     padding-top: 50px;
     padding-bottom: 50px;
     font-family: "Josefin Sans", sans-serif;
+}
+
+.edit-card {
+    padding: 3em;
+    padding-top: 2em;
+    display: inline-block;
+    width: 45em;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: inline-block;
+    margin-top: 15px;
+    height: 40em;
+    margin-top: 75px;
+    margin-right: 25px;
+}
+
+.edit-card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgrey;
+    opacity: 1; /* Firefox */
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: lightgray;
+}
+
+.fom-control:active .form-control:hover {
+    outline-color: #3CB54A;
+}
+
+
+/* select.form-control {
+    color: lightgray;
+} */
+
+label {
+    margin-bottom: 0;
 }
