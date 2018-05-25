@@ -133,6 +133,21 @@ export const deleteProfileByUserName = (req, res, next) => {
     })
 }
 
+export const getProfileByUsername = (req, res, next) => {
+    UserProfile.findOne()
+    .where('username')
+    .equals(req.params.username)
+    .exec(function(err, userProfile) {
+      if (err) {
+        res.status(400).send({message: err.message});
+      } else {
+        //console.log(req.params.username);
+        //console.log(userProfile);
+        res.jsonp(userProfile);
+      }
+    })
+}
+
 export const writeCSV = (req, res, next) => {
     // UserProfile.find({}).exec()
     //   .then(function(docs) {
