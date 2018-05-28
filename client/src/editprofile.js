@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import './dashboard.css'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import React, { Component } from "react";
 import {HelpBlock, Form, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import './signup.css';
@@ -126,7 +126,8 @@ class EditProfile extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-    
+        this.getProfile = this.getProfile.bind(this);
+        this.updateProfile = this.updateProfile.bind(this);
         this.handleName = this.handleName.bind(this);
         this.handleAge = this.handleAge.bind(this);
         this.handleAbout = this.handleAbout.bind(this);
@@ -146,6 +147,8 @@ class EditProfile extends React.Component {
         this.submitTest = this.submitTest.bind(this);
     
         this.state = {
+            retrieved: false,
+            profile: null,
             name: '',
             age: '',
             about: '',
@@ -243,6 +246,27 @@ class EditProfile extends React.Component {
             console.log(err);
         });
     }
+
+    getProfile() {
+        //sleep(1000);
+        axios.get('/users/profile')
+        .then(function (res) {
+            console.log(res.data);
+            return res.data;
+        })
+        .then((data) => {
+            this.updateProfile(data);
+        })
+        .catch(function (err) {
+            //this.forceUpdate();
+            console.log(err);
+        });
+    }
+
+    updateProfile(data) {
+        this.setState({profile: data, retrieved: true});
+        this.handleName(this.state.profile.name);
+    }
     
     // updateUsername(username) {
     //     this.setState({username: username});
@@ -292,11 +316,12 @@ class EditProfile extends React.Component {
 
 
   render() {
-    return (
+    if (this.state.retrieved && this.state.profile != null) {
+        return (
         <div className="edit-card">
-            <h4>Edit Profile</h4>
+            <h4 className="dashboard-title-offset">Edit Profile</h4>
             <Form>
-                    <div style={surround}>
+                    <div className="surround" style={surround}>
                         <ControlLabel style={label}>Name</ControlLabel>
                         <FormControl style={name}
                             type="text"
@@ -305,7 +330,7 @@ class EditProfile extends React.Component {
                             onChange={this.handleName}/>
                         <FormControl.Feedback />
                     </div>
-                    <div style={surround}>
+                    <div className="surround" style={surround}>
                         <ControlLabel className="left-aligned" style={label}>Age</ControlLabel>
                         <FormControl style={age}
                             type="text"
@@ -314,7 +339,7 @@ class EditProfile extends React.Component {
                             onChange={this.handleAge}/>
                         <FormControl.Feedback />
                     </div>
-                    <div style={surround}>
+                    <div className="surround" style={surround}>
                     <ControlLabel className="left-aligned" style={label}>Current Location</ControlLabel>
                     <FormControl style={city}
                         type="text"
@@ -323,8 +348,8 @@ class EditProfile extends React.Component {
                         onChange={this.handleCity}/>
                     <FormControl.Feedback />
                     </div>
-                    <div style={surround2}>
-                    <ControlLabel className="left-aligned" style={label}></ControlLabel>
+                    <div className="surround-down" style={surround2}>
+                    {/* <ControlLabel className="left-aligned" style={label}></ControlLabel> */}
                     <FormControl style={state} componentClass="select" onChange={this.handleState}> 
                         <option value="" disabled selected>State</option>
                         <option value="Alabama">Alabama</option>
@@ -379,7 +404,7 @@ class EditProfile extends React.Component {
                         <option value="Wyoming">Wyoming</option>
                     </FormControl>
                     </div>
-                    <div style={surround}>
+                    <div className="surround" style={surround}>
                         {/* <FormGroup> */}
                         <ControlLabel className="left-aligned" style={label}>Education</ControlLabel>
                         <FormControl style={institution}
@@ -389,8 +414,8 @@ class EditProfile extends React.Component {
                             onChange={this.handleInstitution}/>
                         <FormControl.Feedback />
                     </div>
-                    <div style={surround}>
-                    <ControlLabel className="left-aligned" style={label}></ControlLabel>
+                    <div className="surround" style={surround}>
+                    {/* <ControlLabel className="left-aligned" style={label}></ControlLabel> */}
                     <FormControl style={major}
                         type="text"
                         value={this.state.major}
@@ -398,7 +423,7 @@ class EditProfile extends React.Component {
                         onChange={this.handleMajor}/>
                     <FormControl.Feedback />
                     </div>
-                    <div style={surround3}>
+                    <div className="surround" style={surround3}>
                     {/* <ControlLabel className="left-aligned" style={label}></ControlLabel> */}
                     <FormControl style={degree}
                         type="text"
@@ -409,7 +434,7 @@ class EditProfile extends React.Component {
                     {/* </FormGroup> */}
                 </div>
 
-                <div style={surround}>
+                <div className="surround" style={surround}>
                 <ControlLabel className="left-aligned" style={label}>Current or Most Recent Job</ControlLabel>
                 <FormControl style={company}
                         type="text"
@@ -418,7 +443,7 @@ class EditProfile extends React.Component {
                         onChange={this.handleCompany}/>
                 <FormControl.Feedback />
                 </div>
-                <div style={surround}>
+                <div className="surround" style={surround}>
                 <FormControl style={position}
                         type="text"
                         value={this.state.position}
@@ -428,7 +453,7 @@ class EditProfile extends React.Component {
                 </div>
                 {/* <hr style={{marginTop: '30px', borderColor: '#3CB54A'}} /> */}
 
-                <div style={surround}>
+                <div className="surround" style={surround}>
                 <ControlLabel className="left-aligned" style={label}>What Industry Do You Currently Work In?</ControlLabel>
                     <FormControl componentClass="select" onChange={this.handleIndustry} style={industry}>
                             <option value="" disabled selected style={{color: "lightgrey"}}>Current Industry</option>
@@ -584,7 +609,7 @@ class EditProfile extends React.Component {
                         </FormControl>
                     </div>
 
-                <div style={surround}>
+                <div className="surround" style={surround}>
                     <ControlLabel className="left-aligned" style={label}>Where Are You Looking to Transition Into?</ControlLabel>
                     <FormControl componentClass="select" placeholder="State" onChange={this.handleTargetIndustry} style={industry}>
                             <option value="" disabled selected style={{color: "lightgrey"}}>New Industry</option>
@@ -744,6 +769,20 @@ class EditProfile extends React.Component {
       </div>
 
     )
+    }
+    else if (this.state.tried) {
+        return(<Redirect to="/login"/>)
+    }
+    else {
+        //sleep(1000);
+        try {
+            this.getProfile();
+            return null;
+        }
+        catch(err) {
+            return(<Redirect to="/login"/>)
+        }
+    }
   }
 
 }

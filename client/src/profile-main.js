@@ -77,8 +77,7 @@ class ProfileMain extends React.Component {
 
         this.state = {
             retrieved: false,
-            profile: null,
-            tried: false
+            profile: null
         }
     }
 
