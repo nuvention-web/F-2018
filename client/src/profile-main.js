@@ -74,8 +74,6 @@ class ProfileMain extends React.Component {
         super(props);
         this.getProfile = this.getProfile.bind(this);
         this.updateProfile = this.updateProfile.bind(this);
-        this.updateTried = this.updateTried.bind(this);
-        this.updateCounter = this.updateCounter.bind(this);
 
         this.state = {
             numberTried: 0,
@@ -124,37 +122,31 @@ class ProfileMain extends React.Component {
     //     }
     // }
 
+    // componentDidMount() {
+    //     this.getProfile();
+    // }
+
 
     getProfile() {
         //sleep(1000);
-        var promise = new Promise(() => {
-            axios.get('/users/profile')
-            .then(function (res) {
-                //console.log(res.data);
-                return res.data;
-            })
-            .then((data) => {
-                this.updateProfile(data);
-                //console.log(data);
-                resolve(true);
-            })
-            .catch(function (err) {
-                //this.forceUpdate();
-                console.log(err);
-            });
+        axios.get('/users/profile')
+        .then(res => {
+            //console.log(res.data);
+            return res.data;
+        })
+        .then(data => {
+            this.updateProfile(data);
+            //console.log(data);
             resolve(true);
         })
-        promise.then();
-        //promise.then(this.updateCounter());
-        
+        .catch(err => {
+            console.log(this.state.numberTried);
+            this.setState((prevState) => {
+                return {numberTried: prevState.numberTried + 1}
+            })
+            console.log(err);
+        });
     }
-
-    updateCounter() {
-        console.log(this.state.numberTried);
-        this.setState((prevState) => {
-            return {numberTried: prevState.numberTried + 1}
-        })
-    } 
 
     updateProfile(data) {
         console.log("updating profile page");
@@ -164,12 +156,9 @@ class ProfileMain extends React.Component {
         return this.state.numberTried;
     }
 
-    updateTried() {
-        this.setState({tried: true});
-    }
-
 
     render() {
+        //this.getProfile();
         if (this.state.retrieved && this.state.profile != null) {
             return (
             <div className="main-profile" style={grayed}>
@@ -219,20 +208,13 @@ class ProfileMain extends React.Component {
         }
         else {
             //sleep(1000);
-            try {
-                if (this.state.numberTried <= 5) {
-                    this.getProfile();
-                    return null;
-                }
-                else {
-                    this.getProfile();
-                    sleep(1000);
-                    return(<Redirect to="/login"/>) 
-                }
+            if (this.state.numberTried <= 5) {
+                this.getProfile();
+                return null;
             }
-            catch(err) {
-                console.log(err);
-                //return(<Redirect to="/login"/>)
+            else {
+                return(<Redirect to="/login"/>) 
+            }
             }
         }
 
@@ -244,7 +226,6 @@ class ProfileMain extends React.Component {
         //         return(<Redirect to="/login"/>)
         //     }
         // }
-    }
 
 }
 
