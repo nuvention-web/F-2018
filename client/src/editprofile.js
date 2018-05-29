@@ -7,8 +7,8 @@ import './signup.css';
 import './wizard.css';
 import SignUpForm from './signupform';
 import axios from 'axios';
+import { resolve } from 'url';
 axios.defaults.withCredentials = true;
-
 
 
 var surround = {
@@ -147,6 +147,7 @@ class EditProfile extends React.Component {
         this.submitTest = this.submitTest.bind(this);
     
         this.state = {
+            numberTried: 0,
             retrieved: false,
             profile: null,
             name: '',
@@ -249,23 +250,52 @@ class EditProfile extends React.Component {
 
     getProfile() {
         //sleep(1000);
-        axios.get('/users/profile')
-        .then(function (res) {
-            console.log(res.data);
-            return res.data;
-        })
-        .then((data) => {
-            this.updateProfile(data);
-        })
-        .catch(function (err) {
-            //this.forceUpdate();
-            console.log(err);
-        });
+        if (this.props.username) {
+            axios.get('/users/' + this.props.username)
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
+            })
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+                resolve(true);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
+        else {
+            axios.get('/users/profile')
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
+            })
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+                resolve(true);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
     }
 
     updateProfile(data) {
+        console.log("updating profile page");
+        console.log(data);
         this.setState({profile: data, retrieved: true});
-        this.handleName(this.state.profile.name);
+        console.log(this.state.profile);
+        return this.state.numberTried;
     }
     
     // updateUsername(username) {
@@ -770,17 +800,14 @@ class EditProfile extends React.Component {
 
     )
     }
-    else if (this.state.tried) {
-        return(<Redirect to="/login"/>)
-    }
     else {
         //sleep(1000);
-        try {
+        if (this.state.numberTried <= 5) {
             this.getProfile();
             return null;
         }
-        catch(err) {
-            return(<Redirect to="/login"/>)
+        else {
+            return(<Redirect to="/login"/>) 
         }
     }
   }

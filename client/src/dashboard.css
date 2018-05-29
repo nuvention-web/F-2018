@@ -1,5 +1,5 @@
 .dashboard {
-    background-color: #e6ecf0;
+    background-color: #e6eff0;
     display: flex;
     flex-wrap: wrap;
     align-items: top;
@@ -71,12 +71,12 @@
     width: 100%;
     background-color: #3CB54A;
     padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     font-size: 2vmax;
     color: white;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 2em;
     padding-top: 25px;
     padding-bottom: 25px;
     font-family: "Josefin Sans", sans-serif;
@@ -170,3 +170,73 @@ label {
     margin-left: -1em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.dash-box {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 25em;
+    display: inline-block;
+    height: 33em;
+    background-color: white;
+    margin-top: 9em;
+    text-align: center;
+    /* background-color: #edeeee; */
+    /* border-radius: 50px; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.story-icon {
+    margin: 0 auto;
+    margin-top: -2em;
+    margin-bottom: 1em;
+    /* margin-left: -0.94em; */
+    width: 23.04em;
+    height: 15.36em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+.story-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.story-town {
+    margin-bottom: 1em;
+}
+
+
+.story-text {
+    font-size: 110%;
+    padding: 20px;
+    padding-top: 5px;
+    height: 9em;
+}
+
+.story-transition {
+    width: 100%;
+    display:inline-block;
+    font-weight: bold;
+    font-size: 110%;
+    vertical-align: top;
+}
+
+.story-before {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+}
+
+.story-arrow {
+    display: inline-block;
+    width: 20%;
+}
+
+.story-after {
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+}
+
