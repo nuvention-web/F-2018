@@ -39,7 +39,7 @@ class Steps extends React.Component {
           and <span style={boldStyle}>relationships </span>have the power to inspire each step along the way.
         </h3> */}
         <h3 className="intro-sub" id="intro">
-          <span style={boldStyle}>Monarch helps career switchers connect with other professionals to make the leap to a new career easy.</span>
+          <span style={boldStyle}>Monarch helps career switchers connect with other professionals to simplify the transition.</span>
         </h3>
         {/* <hr/> */}
         <div className="column-box">

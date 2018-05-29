@@ -9,13 +9,29 @@ import ProfileMain from './profile-main'
 
 
 export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return (
-      <div id="contact">
-        <Nav/>
-        <ProfileTop/>
-        <ProfileMain/>
-      </div>
-    );
+    if (this.props.match.params.username) {
+      const {username} = this.props.match.params.username;
+      return (
+        <div id="contact">
+          <Nav/>
+          <ProfileTop username={this.props.match.params.username}/>
+          <ProfileMain username={this.props.match.params.username}/>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div id="contact">
+          <Nav/>
+          <ProfileTop/>
+          <ProfileMain/>
+        </div>
+      );
+    }
   }
 }

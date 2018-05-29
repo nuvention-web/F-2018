@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 class TopNav extends React.Component {
 	state = {
 		auth: false,
-		slide: "-53px",  // How much should the Navbar slide up or down
+		slide: "-60px",  // How much should the Navbar slide up or down
 		lastScrollY: 300,  // Keep track of current position in state
 	  };
 
@@ -29,7 +29,7 @@ class TopNav extends React.Component {
 		if (currentScrollY > lastScrollY) {
 		  this.setState({ slide: '0px' });
 		} else {
-		  this.setState({ slide: '-53px' });
+		  this.setState({ slide: '-60px' });
 		}
 		// this.setState({ lastScrollY: currentScrollY });
 	  };
@@ -39,7 +39,7 @@ class TopNav extends React.Component {
 
 	render() {
 		return (
-		<Navbar className="nav" collapseOnSelect fixedTop fluid 
+		<Navbar className="navbar-norm" collapseOnSelect fixedTop fluid 
 		style={{
 			transform: `translate(0, ${this.state.slide})`,
 			transition: 'transform 150ms linear',
@@ -49,19 +49,18 @@ class TopNav extends React.Component {
 				<Navbar.Brand>
 					<a href="/" className="Name">
 						<div className="top-logo"><img className="logo" src={logo}/></div>
-						<div className="top-name">MONARCH</div>
 					</a>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 			</Navbar.Header>
 			<Navbar.Collapse>
 				<Nav>
-				{/* <NavItem eventKey={1} href="#">
-					Link
+				<NavItem eventKey={1} href="#">
+					<span className="reinvent">Reinvent</span>
 				</NavItem>
-				<NavItem eventKey={2} href="#">
-					Link
-				</NavItem> */}
+				<NavItem href="#">
+				<span className="inspire">Inspire</span>
+				</NavItem>
 				{/* <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
 					<MenuItem eventKey={3.1}></MenuItem>
 					<MenuItem eventKey={3.2}>Another action</MenuItem>
@@ -72,7 +71,7 @@ class TopNav extends React.Component {
 				</Nav>
 				<Nav pullRight>
 				<NavItem eventKey={1} href="/signup">
-					<Link to="/login"><span className="SignUp">Login</span></Link>
+					<Link to="/login"><span className="SignUp">Make the Leap</span></Link>
 				</NavItem>
 				</Nav>
 			</Navbar.Collapse>

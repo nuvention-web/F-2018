@@ -1,4 +1,4 @@
-.nav {
+.navbar-norm {
     /* background-color: #3CB54A; */
     background-color: white;
     /* color: white; */
@@ -13,12 +13,35 @@
     border-radius: 0%;
 }
 
-.Name {
+.nav {
+    margin-left: 20px;
 }
+
+.reinvent {
+    font-size: 150%;
+    transition: ease .2s;
+}
+
+.inspire {
+    font-size: 150%;
+    transition: ease .2s;
+}
+
+.reinvent:hover {
+    color: #3CB54A;
+    font-size: 150%;
+}
+
+.inspire:hover {
+    color: dodgerblue;
+    font-size: 150%;
+}
+
 
 .top-logo {
     display: inline-block;
     padding-right: 5px;
+    padding-top: 5px;
 }
 
 .top-name {
@@ -28,8 +51,8 @@
 }
 
 .logo {
-    width: 50px;
-    height: 35px;
+    width: 55px;
+    height: 38.5px;
     margin: 0;
 }
 
@@ -76,22 +99,27 @@
 }
 
 .SignUp {
-    padding: 10px;
-    background-color: #3CB54A;
-    color: white;
+    /* background-color: #3CB54A; */
+    color: #3CB54A;
     font-size: 125%;
-    font-family: 'Josefin Sans', sans-serif;
-    border-radius: 50px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none!important;
+    transition: ease .2s;
 }
 
 .SignUp:hover {
-    padding: 10px;
-    background-color: #3CB54A;
-    color: white;
+    /* background-color: #3CB54A; */
+    color: #3CB54A;
+    color: rgb(44, 131, 54);
     font-size: 125%;
-    font-family: 'Josefin Sans', sans-serif;
-    border-radius: 50px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none!important;
 }
+
+a:link {
+    text-decoration: none;
+}
+
 
 .navbar-right {
     box-shadow: none !important;

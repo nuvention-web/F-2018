@@ -9,6 +9,7 @@ import arrow from './static/right-arrow.png'
 // import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios';
 import {Redirect} from 'react-router';
+import { resolve } from 'url';
 // var profileTest = {
 //     name: "Drew Parsons",
 //     hometown: "Denver, CO",
@@ -75,6 +76,7 @@ class ProfileMain extends React.Component {
         this.updateProfile = this.updateProfile.bind(this);
 
         this.state = {
+            numberTried: 0,
             retrieved: false,
             profile: null
         }
@@ -119,29 +121,62 @@ class ProfileMain extends React.Component {
     //     }
     // }
 
+    // componentDidMount() {
+    //     this.getProfile();
+    // }
+
 
     getProfile() {
         //sleep(1000);
-        axios.get('/users/profile')
-        .then(function (res) {
-            console.log(res.data);
-            return res.data;
-        })
-        .then((data) => {
-            this.updateProfile(data);
-        })
-        .catch(function (err) {
-            //this.forceUpdate();
-            console.log(err);
-        });
+        if (this.props.username) {
+            axios.get('/users/' + this.props.username)
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
+            })
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
+        else {
+            axios.get('/users/profile')
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
+            })
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
     }
 
     updateProfile(data) {
+        console.log("updating profile page");
+        console.log(data);
         this.setState({profile: data, retrieved: true});
+        console.log(this.state.profile);
+        return this.state.numberTried;
     }
 
 
     render() {
+        //this.getProfile();
         if (this.state.retrieved && this.state.profile != null) {
             return (
             <div className="main-profile" style={grayed}>
@@ -191,14 +226,24 @@ class ProfileMain extends React.Component {
         }
         else {
             //sleep(1000);
-            try {
-                return(<Redirect to="/login"/>)
+            if (this.state.numberTried <= 5) {
+                this.getProfile();
+                return null;
             }
-            catch(err) {
-                return(<Redirect to="/login"/>)
+            else {
+                return(<Redirect to="/login"/>) 
+            }
             }
         }
-    }
+
+        // else {
+        //     try {
+        //         return(<Redirect to="/login"/>)
+        //     }
+        //     catch(err) {
+        //         return(<Redirect to="/login"/>)
+        //     }
+        // }
 
 }
 

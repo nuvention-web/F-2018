@@ -39,18 +39,34 @@ class ProfileTop extends React.Component {
 
     getProfile() {
         //sleep(1000);
-        axios.get('/users/profile')
-        .then(function (res) {
-            console.log(res.data);
-            return res.data;
-        })
-        .then((data) => {
-            this.updateProfile(data);
-        })
-        .catch(function (err) {
-            //this.forceUpdate();
-            console.log(err);
-        });
+        if (this.props.username) {
+            axios.get('/users/' + this.props.username)
+            .then(function (res) {
+                console.log(res.data);
+                return res.data;
+            })
+            .then((data) => {
+                this.updateProfile(data);
+            })
+            .catch(function (err) {
+                //this.forceUpdate();
+                console.log(err);
+            });
+        }
+        else {
+            axios.get('/users/profile')
+            .then(function (res) {
+                console.log(res.data);
+                return res.data;
+            })
+            .then((data) => {
+                this.updateProfile(data);
+            })
+            .catch(function (err) {
+                //this.forceUpdate();
+                console.log(err);
+            });
+        }
     }
     
     updateProfile(data) {
@@ -66,7 +82,7 @@ class ProfileTop extends React.Component {
             <div className="top-color" style={imageStyle}/>
                 <div className="avatar">
                 {/* facebookId="100000473157150" */}
-                    <Avatar name={this.state.profile.name} round={true} size="200"/>
+                    <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
                 </div>
             <div className="profile-intro">
                 <h1 className="profile-name">{this.state.profile.name}</h1>
