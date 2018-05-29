@@ -137,7 +137,6 @@ class ProfileMain extends React.Component {
             .then(data => {
                 this.updateProfile(data);
                 //console.log(data);
-                resolve(true);
             })
             .catch(err => {
                 console.log(this.state.numberTried);
@@ -156,7 +155,6 @@ class ProfileMain extends React.Component {
             .then(data => {
                 this.updateProfile(data);
                 //console.log(data);
-                resolve(true);
             })
             .catch(err => {
                 console.log(this.state.numberTried);
