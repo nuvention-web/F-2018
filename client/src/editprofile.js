@@ -230,23 +230,6 @@ class EditProfile extends React.Component {
         this.setState({ about: e.target.value });
     }
     
-    submitUserProfile() {
-        //let currentComponent = this;
-        axios.get('/users/getusername')
-        .then((res) => {
-            let username = res.data.username;
-            console.log(username);
-            //currentComponent.setState({username: res.data.username});
-            return (username);
-        })
-        .then((username) => {
-            this.submitTest(username);
-        })
-        //.then(this.submitTest())
-        .catch(function (err) {
-            console.log(err);
-        });
-    }
 
     getProfile() {
         //sleep(1000);
@@ -303,11 +286,28 @@ class EditProfile extends React.Component {
     //     console.log(this.state.username);
     // }
     
+    submitUserProfile() {
+        //let currentComponent = this;
+        axios.get('/users/getusername')
+        .then((res) => {
+            let username = res.data.username;
+            console.log(username);
+            //currentComponent.setState({username: res.data.username});
+            return (username);
+        })
+        .then((username) => {
+            this.submitTest(username);
+        })
+        //.then(this.submitTest())
+        .catch(function (err) {
+            console.log(err);
+        });
+    }
     
     submitTest(username) {
         //this.getUserName();
         console.log(username);
-        axios.post('/users/addprofile', {
+        axios.post('/users/updateprofile', {
             username: username,
             name: this.state.name,
             age: this.state.age,
