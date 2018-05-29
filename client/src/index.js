@@ -22,7 +22,7 @@ ReactDom.render(
             <Route exact path="/" component={Home}/>
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/login" component={Login}/>
-            <Route path="/profile/" component={Profile}/>
+            <Route path="/profile/:username?" component={Profile}/>
             <Route path="/edit/" component={Quiz}/>
             <Route path="/dashboard" component={Dashboard}/>
         </Switch>

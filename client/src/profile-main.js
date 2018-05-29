@@ -129,23 +129,44 @@ class ProfileMain extends React.Component {
 
     getProfile() {
         //sleep(1000);
-        axios.get('/users/profile')
-        .then(res => {
-            //console.log(res.data);
-            return res.data;
-        })
-        .then(data => {
-            this.updateProfile(data);
-            //console.log(data);
-            resolve(true);
-        })
-        .catch(err => {
-            console.log(this.state.numberTried);
-            this.setState((prevState) => {
-                return {numberTried: prevState.numberTried + 1}
+        if (this.props.username) {
+            axios.get('/users/' + this.props.username)
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
             })
-            console.log(err);
-        });
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+                resolve(true);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
+        else {
+            axios.get('/users/profile')
+            .then(res => {
+                //console.log(res.data);
+                return res.data;
+            })
+            .then(data => {
+                this.updateProfile(data);
+                //console.log(data);
+                resolve(true);
+            })
+            .catch(err => {
+                console.log(this.state.numberTried);
+                this.setState((prevState) => {
+                    return {numberTried: prevState.numberTried + 1}
+                })
+                console.log(err);
+            });
+        }
     }
 
     updateProfile(data) {
