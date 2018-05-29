@@ -73,26 +73,29 @@ var surround2 = {
 }
 
 var surround3 = {
-    margin: "0 auto"
+    display: "inline-block",
+    alignItems: "left",
+    verticalAlign: "top",
+    marginTop: "1em"
 }
 
 var institution = {
-    width: "20em",
+    width: "35em",
     marginLeft: "1em",
     marginRight: "1em",
-    marginBottom: "1em",
     border: "1px solid #e3e3e3"
 }
 
 var major = {
-    width: "16em",
+    width: "17em",
     marginRight: "1em",
+    marginLeft: "1em",
     marginBottom: "1em",
     border: "1px solid #e3e3e3"
 }
 
 var degree = {
-    width: "15em",
+    width: "17em",
     margin: "0 auto",
     marginBottom: "1em",
     border: "1px solid #e3e3e3"
@@ -277,6 +280,17 @@ class EditProfile extends React.Component {
         console.log("updating profile page");
         console.log(data);
         this.setState({profile: data, retrieved: true});
+        this.setState({
+            name: this.state.profile.name,
+            age: this.state.profile.age,
+            city: this.state.profile.location.city,
+            state: this.state.profile.location.city,
+            institution: this.state.profile.education[0].institution,
+            major: this.state.profile.education[0].major,
+            degree: this.state.profile.education[0].degree,
+            company: this.state.profile.experience[0].company,
+            position: this.state.profile.experience[0].position
+            });
         console.log(this.state.profile);
         return this.state.numberTried;
     }
