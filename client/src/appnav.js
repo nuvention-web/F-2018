@@ -3,6 +3,13 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button } from 'react-boots
 import './nav.css';
 import {Link} from 'react-router-dom'
 import logo from './static/logo.png'
+import avatar from './static/avatar-inside-a-circle.png'
+
+var avatarStyle = {
+	paddingBottom: "0",
+	paddingTop: "5px"
+}
+
 
 class AppNav extends React.Component {
 
@@ -63,7 +70,7 @@ class AppNav extends React.Component {
 					</NavItem>
 					</Nav>
 					<Nav pullRight>
-					<NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
+					<NavDropdown eventKey={3} componentClass="avatar-logo-container" title={<span><i className="fa fa-user fa-fw"></i> <img className="avatar-logo "  src={avatar}/></span> }  id="basic-nav-dropdown">
 						<MenuItem eventKey={3.1}></MenuItem>
 						<MenuItem eventKey={3.2}>Profile</MenuItem>
 						<MenuItem eventKey={3.3}>Dashboard </MenuItem>

@@ -7,6 +7,7 @@ import Steps from './steps.js'
 import Timeline from './timeline' 
 import React, { Component } from "react";
 import { browserHistory } from 'react-router';
+import AppNav from './appnav'
 
 console.log("Hello world!")
 

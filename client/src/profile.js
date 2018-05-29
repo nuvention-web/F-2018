@@ -18,7 +18,7 @@ export default class Profile extends Component {
       const {username} = this.props.match.params.username;
       return (
         <div id="contact">
-          <Nav/>
+          <AppNav/>
           <ProfileTop username={this.props.match.params.username}/>
           <ProfileMain username={this.props.match.params.username}/>
         </div>
@@ -27,7 +27,7 @@ export default class Profile extends Component {
     else {
       return (
         <div id="contact">
-          <Nav/>
+          <AppNav/>
           <ProfileTop/>
           <ProfileMain/>
         </div>
