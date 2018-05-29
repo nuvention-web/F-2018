@@ -102,7 +102,7 @@ var degree = {
 }
 
 var company = {
-    width: "15em",
+    width: "17em",
     marginLeft: "1em",
     marginRight: "1em",
     marginBottom: "1em",
@@ -110,7 +110,7 @@ var company = {
 }
 
 var position = {
-    width: "15em",
+    width: "17em",
     marginRight: "1em",
     marginBottom: "1em",
     border: "1px solid #e3e3e3"
