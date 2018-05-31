@@ -128,3 +128,19 @@
     margin-bottom: 10px;
 }
 
+.mentortag {
+    background-color: dodgerblue;
+    font-size: 22px;
+    position: relative;
+    top: -50px;
+    left: 70px;
+    width: 50px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    text-align: center;
+    z-index: 25;
+}
+

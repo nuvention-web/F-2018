@@ -124,6 +124,15 @@ var industry = {
     border: "1px solid #e3e3e3"
 }
 
+var about = {
+    width: "35em",
+    marginLeft: "1em",
+    marginRight: "1em",
+    marginBottom: "1em",
+    border: "1px solid #e3e3e3"
+
+}
+
 
 class EditProfile extends React.Component {
 
@@ -284,12 +293,13 @@ class EditProfile extends React.Component {
             name: this.state.profile.name,
             age: this.state.profile.age,
             city: this.state.profile.location.city,
-            state: this.state.profile.location.city,
+            state: this.state.profile.location.state,
             institution: this.state.profile.education[0].institution,
             major: this.state.profile.education[0].major,
             degree: this.state.profile.education[0].degree,
             company: this.state.profile.experience[0].company,
-            position: this.state.profile.experience[0].position
+            position: this.state.profile.experience[0].position,
+            about: this.state.profile.about.about
             });
         console.log(this.state.profile);
         return this.state.numberTried;
@@ -808,8 +818,21 @@ class EditProfile extends React.Component {
                             <option value="Writing & Editing">Writing & Editing</option>
                         </FormControl>
                     </div>
+
+                <div className="surround" style={surround}>
+                    <FormGroup controlId="formControlsTextarea">
+                        <ControlLabel className="left-aligned" style={label}>Tell us about yourself and your career journey.</ControlLabel>
+                        <FormControl 
+                        componentClass="textarea" 
+                        placeholder=""
+                        value={this.state.about}
+                        onChange={this.handleAbout}
+                        style={about}/>
+                        <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.  You may choose to talk about whatever you like.</HelpBlock>
+                    </FormGroup>
+                </div>
                 </Form>
-                <Link to="/dashboard"><Button bsSize="large" className="submit-signup" onClick={this.submitUserProfile} style={{marginTop: "1em", float: "right"}}>Submit</Button></Link>
+                <Link to="/profile"><Button bsSize="large" className="submit-signup" onClick={this.submitUserProfile} style={{marginTop: "1em", float: "right"}}>Submit</Button></Link>
       </div>
 
     )

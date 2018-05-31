@@ -18,7 +18,15 @@ var space = {
     marginTop: "20px"
 }
 
-export default class Wizard extends Component {
+var blueButton = {
+    backgroundColor: "dodgerblue"
+}
+
+var blue = {
+    color: "dodgerblue"
+}
+
+export default class MentorSignup extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -175,7 +183,7 @@ export default class Wizard extends Component {
                 whyindustry: this.state.whyIndustry,
                 transitioningquestions: this.state.transitioningQuestions
             },
-            mentor: false
+            mentor: true
           })
         .then(function(res) {
             console.log(res);
@@ -188,7 +196,7 @@ export default class Wizard extends Component {
   render() {
     return (
         <div className="img-container">
-            <h1 className="wizardTitle">Tell Us a Bit About You.</h1>
+            <h1 className="wizardTitle" style={blue}>Tell Us a Bit About You.</h1>
             <form className="edit-form">
                     <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>Name</ControlLabel>
                     <FormControl
@@ -300,9 +308,9 @@ export default class Wizard extends Component {
                         onChange={this.handlePosition}/>
                 <FormControl.Feedback />
                 
-                <hr style={{marginTop: '30px', borderColor: '#3CB54A'}} />
+                <hr style={{marginTop: '30px', borderColor: 'dodgerblue'}} />
 
-                <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>What Industry Do You Currently Work In?</ControlLabel>
+                <ControlLabel className="left-aligned" style={{paddingTop: '15px'}}>What industry did you work in before your switch?</ControlLabel>
                 <FormControl componentClass="select" placeholder="State" onChange={this.handleIndustry}>
                         <option value="" disabled selected style={{color: "lightgrey"}}>Current Industry</option>
                         <option value="Accounting">Accounting</option>
@@ -612,7 +620,7 @@ export default class Wizard extends Component {
 
                     </FormControl>
 
-                <hr style={{marginTop: '30px', borderColor: '#3CB54A'}} />
+                <hr style={{marginTop: '30px', borderColor: 'dodgerblue'}} />
 
 
                 <FormGroup controlId="formControlsTextarea">
@@ -625,7 +633,7 @@ export default class Wizard extends Component {
                 </FormGroup>
 
                 <div className="submit-container">
-                <Link to="/dashboard"><Button bsSize="large" className="submit-signup" onClick={this.submitUserProfile} style={space}>Submit</Button></Link>
+                <Link to="/dashboard"><Button bsSize="large" className="submit-signup-blue" onClick={this.submitUserProfile} style={space}>Submit</Button></Link>
                 {/*<Button bsSize="large" className="submit" onClick={this.getUserName}>Test</Button>*/}
                 </div>
             </form>

@@ -72,8 +72,8 @@ class AppNav extends React.Component {
 					<Nav pullRight>
 					<NavDropdown eventKey={3} componentClass="avatar-logo-container" title={<span><i className="fa fa-user fa-fw"></i> <img className="avatar-logo "  src={avatar}/></span> }  id="basic-nav-dropdown">
 						<MenuItem eventKey={3.1}></MenuItem>
-						<MenuItem eventKey={3.2}>Profile</MenuItem>
-						<MenuItem eventKey={3.3}>Dashboard </MenuItem>
+						<MenuItem eventKey={3.2}><Link to="/profile">Profile</Link></MenuItem>
+						<MenuItem eventKey={3.3}><Link to="/dashboard">Dashboard</Link></MenuItem>
 						<MenuItem divider />
 						<MenuItem eventKey={3.3}>Log Out</MenuItem>
 					</NavDropdown>

@@ -7,6 +7,7 @@ import Avatar from 'react-avatar';
 import image from './static/shutterstock_520402930.jpg'
 // import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios';
+import star from "./static/favorites.png"
 
 var profileTest = {
     name: "Drew Parsons",
@@ -22,6 +23,13 @@ var imageStyle = {
     backgroundImage: `url(${image})`
   }
 
+var blueButton = {
+    backgroundColor: "dodgerblue"
+}
+
+var blue = {
+    color: "dodgerblue"
+}
 
 
 
@@ -76,22 +84,45 @@ class ProfileTop extends React.Component {
 
 
   render() {
+
+
+
     if (this.state.retrieved && this.state.profile != null) {
-        return (
-        <div className="top-profile">
-            <div className="top-color" style={imageStyle}/>
-                <div className="avatar">
-                {/* facebookId="100000473157150" */}
-                    <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
+        if(this.state.profile.mentor = true) {
+            return (
+            <div className="top-profile">
+                <div className="top-color" style={imageStyle}/>
+                <div className="mentortag"> <img src={star}/> </div>
+                    <div className="avatar">
+                    {/* facebookId="100000473157150" */}
+                        <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
+                    </div>
+                <div className="profile-intro">
+                    <h1 className="profile-name">{this.state.profile.name}</h1>
+                    <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
+                    <Button className="connectButton" style={blueButton} bsStyle="large">Connect</Button>
+                    {/* <hr/> */}
                 </div>
-            <div className="profile-intro">
-                <h1 className="profile-name">{this.state.profile.name}</h1>
-                <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
-                <Button className="connectButton" bsStyle="large">Connect</Button>
-                {/* <hr/> */}
             </div>
-        </div>
-        )
+            )
+        }
+        else {
+            return (
+                <div className="top-profile">
+                    <div className="top-color" style={imageStyle}/>
+                        <div className="avatar">
+                        {/* facebookId="100000473157150" */}
+                            <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
+                        </div>
+                    <div className="profile-intro">
+                        <h1 className="profile-name">{this.state.profile.name}</h1>
+                        <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
+                        <Button className="connectButton" bsStyle="large">Connect</Button>
+                        {/* <hr/> */}
+                    </div>
+                </div>
+                )
+        }
     }
     else {
         //sleep(1000);

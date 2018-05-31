@@ -52,7 +52,7 @@ class Steps extends React.Component {
           <div className="core-box">
             <img src={img1} className="icon"/>
             <hr/>
-            <div className="core-title">Connect</div>
+            <div className="core-title">Engage</div>
             <div className="core-text">Relationships matter. Speak with professionals who understand your career journey and get an honest outlook on your career switch.</div>
           </div>
           <div className="core-box">
