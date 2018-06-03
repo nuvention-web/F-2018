@@ -379,7 +379,7 @@ class EditProfile extends React.Component {
 
   render() {
     if (this.state.retrieved && this.state.profile != null) {
-        if (this.state.profile.mentor = true) {
+        if (this.state.profile.mentor == true) {
             return (
                 <div className="edit-card">
                     <h4 className="dashboard-title-offset" style={blueButton}>Edit Profile</h4>

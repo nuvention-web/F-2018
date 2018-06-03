@@ -88,7 +88,7 @@ class ProfileTop extends React.Component {
 
 
     if (this.state.retrieved && this.state.profile != null) {
-        if(this.state.profile.mentor = true) {
+        if(this.state.profile.mentor == true) {
             return (
             <div className="top-profile">
                 <div className="top-color" style={imageStyle}/>

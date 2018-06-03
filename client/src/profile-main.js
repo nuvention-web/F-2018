@@ -197,7 +197,7 @@ class ProfileMain extends React.Component {
     render() {
         //this.getProfile();
         if (this.state.retrieved && this.state.profile != null) {
-            if (this.state.profile.mentor = true) {
+            if (this.state.profile.mentor == true) {
                 return (
                     <div className="main-profile" style={grayed}>
                         <div className="profile-section">
