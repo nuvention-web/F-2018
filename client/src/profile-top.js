@@ -41,7 +41,8 @@ class ProfileTop extends React.Component {
 
         this.state = {
             retrieved: false,
-            profile: null
+            profile: null,
+            email: null
         }
     }
 
@@ -60,6 +61,14 @@ class ProfileTop extends React.Component {
                 //this.forceUpdate();
                 console.log(err);
             });
+            axios.get('/users/email/' + this.props.username)
+            .then(res => {
+                this.setState({email: res.data.email});
+                //console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
         }
         else {
             axios.get('/users/profile')
@@ -100,7 +109,7 @@ class ProfileTop extends React.Component {
                 <div className="profile-intro">
                     <h1 className="profile-name">{this.state.profile.name}</h1>
                     <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
-                    <Button className="connectButton" style={blueButton} bsStyle="large">Connect</Button>
+                    <Button className="connectButton" style={blueButton} bsStyle="large" onClick={()=>alert(this.state.email)}>Connect</Button>
                     {/* <hr/> */}
                 </div>
             </div>
@@ -118,7 +127,7 @@ class ProfileTop extends React.Component {
                     <div className="profile-intro">
                         <h1 className="profile-name">{this.state.profile.name}</h1>
                         <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
-                        <Button className="connectButton" bsStyle="large">Connect</Button>
+                        <Button className="connectButton" bsStyle="large" onClick={()=>alert(this.state.email)}>Connect</Button>
                         {/* <hr/> */}
                     </div>
                 </div>
