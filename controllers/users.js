@@ -148,6 +148,24 @@ export const getProfileByUsername = (req, res, next) => {
     })
 }
 
+
+
+export const getAll = (req, res, next) => {
+  UserProfile.find({})
+    .exec((err, users) => {
+    if (err) {
+      res.status(400).send({message: err.message});
+    } else {
+      console.log(users);
+      let userMap = {};
+      users.forEach((user)=> {
+        userMap[user._id] = user;
+      });
+      res.send(userMap);
+    }
+  })
+}
+
 export const writeCSV = (req, res, next) => {
     // UserProfile.find({}).exec()
     //   .then(function(docs) {
