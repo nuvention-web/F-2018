@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 
-import {createUser, logUser, getUserProfile, addUserProfile, getUserName, deleteProfileByUserName, writeCSV, getProfileByUsername, updateProfileByUserName} from './controllers/users';
+import {createUser, logUser, getUserProfile, addUserProfile, getUserName, deleteProfileByUserName, writeCSV, getProfileByUsername, updateProfileByUserName, getAll, getEmail} from './controllers/users';
 
 //const path = require('path');
 
@@ -27,6 +27,10 @@ router.route('/users/deleteprofile').post(deleteProfileByUserName);
 router.route('/users/updateprofile').post(updateProfileByUserName);
 
 router.route('/csv').get(writeCSV);
+
+router.route('/users/all').get(getAll);
+
+router.route('/users/email/:username').get(getEmail);
 
 router.route('/users/:username').get(getProfileByUsername);
 

@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import Avatar from 'react-avatar';
 import image from './static/shutterstock_520402930.jpg'
 import arrow from './static/right-arrow.png'
+import arrow2 from './static/right-arrow-blue.png'
 // import 'react-vertical-timeline-component/style.min.css';
 import axios from 'axios';
 import {Redirect} from 'react-router';
@@ -35,6 +36,11 @@ var colored = {
     color: "#3CB54A"
 }
 
+var coloredBlue = {
+    borderColor: "dodgerblue",
+    color: "dodgerblue"
+}
+
 var graytext = {
     color: "lightgray",
     fontSize: "13px",
@@ -57,6 +63,19 @@ var school = {
 
 var school2 = {
     fontStyle: "italic"
+}
+
+var blueButton = {
+    backgroundColor: "dodgerblue"
+}
+
+var blue = {
+    color: "dodgerblue"
+}
+
+var blueline = {
+    borderColor: "dodgerblue",
+    marginBottom: "0"
 }
 
 function sleep(milliseconds) {
@@ -178,51 +197,101 @@ class ProfileMain extends React.Component {
     render() {
         //this.getProfile();
         if (this.state.retrieved && this.state.profile != null) {
-            return (
-            <div className="main-profile" style={grayed}>
-                <div className="profile-section">
-                    <h3 className=""> About </h3>
-                    <hr style={colored}/>
-                    {this.state.profile.about.about}
-                </div>
-                <div className="profile-transition">
-                    {this.state.profile.industries.currentindustry}
-                    <img className="transition-arrow" src={arrow}/>
-                    {this.state.profile.industries.targetindustry}
-                    <hr style={lineStyle}/>
-                    <div style={graytext}> This section shows the industry 
-                    where the user previously worked in, and the industry he/she 
-                    is interested in.  This helps Monarch match individuals with similar interests.
+            if (this.state.profile.mentor == true) {
+                return (
+                    <div className="main-profile" style={grayed}>
+                        <div className="profile-section">
+                            <h3 className=""> About </h3>
+                            <hr style={coloredBlue}/>
+                            {this.state.profile.about.about}
+                        </div>
+                        <div className="profile-transition">
+                            {this.state.profile.industries.currentindustry}
+                            <img className="transition-arrow" src={arrow2}/>
+                            {this.state.profile.industries.targetindustry}
+                            <hr style={lineStyle}/>
+                            <div style={graytext}> This section shows the industry 
+                            where the user previously worked in, and the industry he/she 
+                            is interested in.  This helps Monarch match individuals with similar interests.
+                            </div>
+                        </div>
+                        <div className="profile-section">
+                            <h3 className=""> Transition </h3>
+                            <hr style={coloredBlue}/>
+                            <h4 className="subtitle">Why are you looking to change careers?  What are your interests, motivations and fears about doing so?</h4>
+                            <hr className="subtitleLine"/>
+                            {this.state.profile.about.transitioningquestions}
+                            <br/>
+                            <br/>
+                            <h4 className="subtitle">What would you like to learn from Monarch's connections?</h4>
+                            <hr className="subtitleLine"/>
+                            {this.state.profile.about.whyindustry}
+                        </div>
+                        <div className="profile-section" style={{top: "-50px"}}>
+                            <h3 className=""> Education & Work Experience </h3>
+                            <hr style={coloredBlue}/>
+                            <span style={school}>{this.state.profile.education[0].institution}</span>
+                            <br/>
+                            <span style={school2}>{this.state.profile.education[0].degree}</span>
+                            <br/>
+                            <span style={coloredBlue}>{this.state.profile.education[0].major}</span>
+                            
+                            <hr/>
+                            <span style={bolded}> Company</span> <span style={coloredBlue}>––</span> {this.state.profile.experience[0].company}
+                            <br/>
+                            <span style={bolded}> Position</span> <span style={coloredBlue}>––</span> {this.state.profile.experience[0].position}
+                        </div>
                     </div>
-                </div>
-                <div className="profile-section">
-                    <h3 className=""> Transition </h3>
-                    <hr style={colored}/>
-                    <h4 className="subtitle">Why are you looking to change careers?  What are your interests, motivations and fears about doing so?</h4>
-                    <hr className="subtitleLine"/>
-                    {this.state.profile.about.transitioningquestions}
-                    <br/>
-                    <br/>
-                    <h4 className="subtitle">What would you like to learn from Monarch's connections?</h4>
-                    <hr className="subtitleLine"/>
-                    {this.state.profile.about.whyindustry}
-                </div>
-                <div className="profile-section" style={{top: "-50px"}}>
-                    <h3 className=""> Education & Work Experience </h3>
-                    <hr style={colored}/>
-                    <span style={school}>{this.state.profile.education[0].institution}</span>
-                    <br/>
-                    <span style={school2}>{this.state.profile.education[0].degree}</span>
-                    <br/>
-                    <span style={colored}>{this.state.profile.education[0].major}</span>
-                    
-                    <hr/>
-                    <span style={bolded}> Company</span> <span style={colored}>––</span> {this.state.profile.experience[0].company}
-                    <br/>
-                    <span style={bolded}> Position</span> <span style={colored}>––</span> {this.state.profile.experience[0].position}
-                </div>
-            </div>
-            )
+                    )
+            } 
+            else {
+                return (
+                    <div className="main-profile" style={grayed}>
+                        <div className="profile-section">
+                            <h3 className=""> About </h3>
+                            <hr style={colored}/>
+                            {this.state.profile.about.about}
+                        </div>
+                        <div className="profile-transition">
+                            {this.state.profile.industries.currentindustry}
+                            <img className="transition-arrow" src={arrow}/>
+                            {this.state.profile.industries.targetindustry}
+                            <hr style={lineStyle}/>
+                            <div style={graytext}> This section shows the industry 
+                            where the user previously worked in, and the industry he/she 
+                            is interested in.  This helps Monarch match individuals with similar interests.
+                            </div>
+                        </div>
+                        <div className="profile-section">
+                            <h3 className=""> Transition </h3>
+                            <hr style={colored}/>
+                            <h4 className="subtitle">Why are you looking to change careers?  What are your interests, motivations and fears about doing so?</h4>
+                            <hr className="subtitleLine"/>
+                            {this.state.profile.about.transitioningquestions}
+                            <br/>
+                            <br/>
+                            <h4 className="subtitle">What would you like to learn from Monarch's connections?</h4>
+                            <hr className="subtitleLine"/>
+                            {this.state.profile.about.whyindustry}
+                        </div>
+                        <div className="profile-section" style={{top: "-50px"}}>
+                            <h3 className=""> Education & Work Experience </h3>
+                            <hr style={colored}/>
+                            <span style={school}>{this.state.profile.education[0].institution}</span>
+                            <br/>
+                            <span style={school2}>{this.state.profile.education[0].degree}</span>
+                            <br/>
+                            <span style={colored}>{this.state.profile.education[0].major}</span>
+                            
+                            <hr/>
+                            <span style={bolded}> Company</span> <span style={colored}>––</span> {this.state.profile.experience[0].company}
+                            <br/>
+                            <span style={bolded}> Position</span> <span style={colored}>––</span> {this.state.profile.experience[0].position}
+                        </div>
+                    </div>
+                    )
+
+            }
         }
         else {
             //sleep(1000);

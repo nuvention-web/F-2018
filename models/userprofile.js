@@ -12,6 +12,7 @@ var profileSchema = new mongoose.Schema({
         type: String
     },
     age: Number,
+    linkedin: String,
     location: {
         city: String,
         state: String

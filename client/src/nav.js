@@ -70,8 +70,8 @@ class TopNav extends React.Component {
 				</NavDropdown> */}
 				</Nav>
 				<Nav pullRight>
-				<NavItem eventKey={1} href="/signup">
-					<Link to="/login"><span className="SignUp">Make the Leap</span></Link>
+				<NavItem eventKey={1}>
+					<Link to="/login"><span className="SignUp">Login</span></Link>
 				</NavItem>
 				</Nav>
 			</Navbar.Collapse>

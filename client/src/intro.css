@@ -17,7 +17,8 @@ img {
     /* background-color: rgba(3, 3, 3, 0.6); */
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 20%;
+    margin-bottom: 40vh;
     transform: translate(-50%, -50%);
 }
 
@@ -41,7 +42,8 @@ hr {
 }
 
 .introButton {
-    margin-top: 55vh;
+    margin-bottom: 15px;
+    display: inline-block;
     width: 350px;
     height: 50px;
     background: rgba(59,173,227,1);
@@ -52,12 +54,12 @@ hr {
     color: white;
     border-radius: 50px;
     border: none;
-    vertical-align: bottom;
     /* border-color: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%); */
 }
 
 .introButton:hover{
-    margin-top: 55vh;
+    margin-bottom: 15px;
+    display: inline-block;
     width: 350px;
     height: 50px;
     background: rgba(59,173,227,1);
@@ -67,5 +69,49 @@ hr {
     color: white;
     border-radius: 50px;
     border-color: #3CB54A;
-
 }
+
+.introMentor {
+    margin-bottom: 15px;
+    display: inline-block;
+    float: right;
+    width: 350px;
+    height: 50px;
+    background: rgba(59,173,227,1);
+    background: linear-gradient(45deg, white 8%,  rgb(146, 198, 250) 40%, rgb(92, 173, 255) 57%, dodgerblue 100%);
+    /* background: transparent; */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    /* border-color: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%); */
+}
+
+.introMentor:hover{
+    margin-bottom: 15px;
+    display: inline-block;
+    float: right;
+    width: 350px;
+    height: 50px;
+    background: rgba(59,173,227,1);
+    background: linear-gradient(45deg, white 8%,  rgb(146, 198, 250) 40%, rgb(92, 173, 255) 57%, dodgerblue 100%);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 150%;
+    color: white;
+    border-radius: 50px;
+}
+
+.intro-button-box {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
+    padding-left: 5vmax;
+    padding-right: 5vmax;
+}
+

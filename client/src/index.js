@@ -10,6 +10,8 @@ import Profile from './profile';
 import Quiz from './quiz';
 import Login from './login';
 import Dashboard from './dashboard';
+import MentorSignup from './mentorsignup'
+import Mentor from './mentor'
 
 // ReactDom.render(
 //     <Router history={browserHistory} routes={routes} />,
@@ -25,6 +27,8 @@ ReactDom.render(
             <Route path="/profile/:username?" component={Profile}/>
             <Route path="/edit/" component={Quiz}/>
             <Route path="/dashboard" component={Dashboard}/>
+            <Route exact path="/mentorsignup" component={MentorSignup}/>
+            <Route exact path="/mentor" component={Mentor}/>
         </Switch>
     </BrowserRouter>,
   document.getElementById('root')
