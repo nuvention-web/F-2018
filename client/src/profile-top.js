@@ -119,6 +119,7 @@ class ProfileTop extends React.Component {
             return (
                 <div className="top-profile">
                     <div className="top-color" style={imageStyle}/>
+                    <div className="mentortag" style={{zIndex: "-25"}}> <img src={star}/> </div>
                         <div className="avatar">
                         {/* facebookId="100000473157150" */}
                             <Avatar name={this.state.profile.name} round={true} size="200" style={{width: "200px"}}/>
