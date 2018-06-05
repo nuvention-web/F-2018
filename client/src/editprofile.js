@@ -365,7 +365,7 @@ class EditProfile extends React.Component {
                 whyindustry: this.state.whyIndustry,
                 transitioningquestions: this.state.transitioningQuestions
             },
-            mentor: false
+            mentor: this.state.profile.mentor
           })
         .then(function(res) {
             console.log(res);
