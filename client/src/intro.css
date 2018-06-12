@@ -17,7 +17,7 @@ img {
     /* background-color: rgba(3, 3, 3, 0.6); */
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 33%;
     margin-bottom: 40vh;
     transform: translate(-50%, -50%);
 }

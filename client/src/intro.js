@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './intro.css';
-import image from './static/intro.jpeg'
+import image from './static/intro2.jpg'
 import logo from './static/logo.png'
 import { Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
