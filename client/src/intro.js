@@ -22,8 +22,8 @@ class Head extends React.Component {
           <h5>Reinvent Your Career Today.</h5>
         </div>
         <div className="intro-button-box">
-        <Link to="/signup"><Button className="introButton" bsSize="large" href="/signup">Signup</Button></Link>
-        <Link to="/mentor"><Button className="introMentor" bsSize="large" href="/signup">Become a Mentor</Button></Link>
+        <Link to="/signup"><Button className="introButton" bsSize="large" href="/signup">I am a Career Switcher</Button></Link>
+        <Link to="/mentor"><Button className="introMentor" bsSize="large" href="/signup">I Want to Share my Switch</Button></Link>
         </div>
       </div>
     )
