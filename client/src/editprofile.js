@@ -165,6 +165,7 @@ class EditProfile extends React.Component {
         this.submitUserProfile = this.submitUserProfile.bind(this);
         //this.updateUsername = this.updateUsername.bind(this);
         this.submitTest = this.submitTest.bind(this);
+        this.handleLinkedin = this.handleLinkedin.bind(this);
     
         this.state = {
             numberTried: 0,
@@ -184,6 +185,7 @@ class EditProfile extends React.Component {
             targetIndustry: '',
             whyIndustry: '',
             transitioningQuestions: '',
+            linkedin: ''
         };
       }
     
@@ -194,7 +196,9 @@ class EditProfile extends React.Component {
     //     return null;
     // }
     
-    
+    handleLinkedin(e) {
+        this.setState({ linkedin: e.target.value });
+      }
     handleName(e) {
       this.setState({ name: e.target.value });
     }
@@ -307,7 +311,8 @@ class EditProfile extends React.Component {
             degree: this.state.profile.education[0].degree,
             company: this.state.profile.experience[0].company,
             position: this.state.profile.experience[0].position,
-            about: this.state.profile.about.about
+            about: this.state.profile.about.about,
+            linkedin: this.state.profile.linkedin
             });
         console.log(this.state.profile);
         return this.state.numberTried;
@@ -365,7 +370,8 @@ class EditProfile extends React.Component {
                 whyindustry: this.state.whyIndustry,
                 transitioningquestions: this.state.transitioningQuestions
             },
-            mentor: this.state.profile.mentor
+            mentor: this.state.profile.mentor,
+            linkedin: this.state.linkedin
           })
         .then(function(res) {
             console.log(res);
@@ -840,6 +846,16 @@ class EditProfile extends React.Component {
                                 <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.  You may choose to talk about whatever you like.</HelpBlock>
                             </FormGroup>
                         </div>
+                        <div className="surround" style={surround}>
+                            <ControlLabel style={label}>Linkedin URL</ControlLabel>
+                            <FormControl style={industry}
+                                type="text"
+                                value={this.state.linkedin}
+                                placeholder="LinkedIn URL"
+                                onChange={this.handleLinkedin}/>
+                            <FormControl.Feedback />
+                            <HelpBlock className="left-aligned" style={{margin: "0"}}>Place your LinkedIn page URL here so other's can learn more about you.</HelpBlock>
+                        </div>
                         </Form>
                         <Link to="/profile"><Button bsSize="large" className="submit-signup-blue" onClick={this.submitUserProfile} style={{marginTop: "1em", float: "right"}}>Submit</Button></Link>
               </div>
@@ -1309,6 +1325,16 @@ class EditProfile extends React.Component {
                             <HelpBlock className="left-aligned" style={{margin: "0"}}>This will appear on your profile for others to view.  You may choose to talk about whatever you like.</HelpBlock>
                         </FormGroup>
                     </div>
+                    <div className="surround" style={surround}>
+                            <ControlLabel style={label}>Linkedin URL</ControlLabel>
+                            <FormControl style={industry}
+                                type="text"
+                                value={this.state.linkedin}
+                                placeholder="LinkedIn URL"
+                                onChange={this.handleLinkedin}/>
+                            <FormControl.Feedback />
+                            <HelpBlock className="left-aligned" style={{margin: "0"}}>Place your LinkedIn page URL here so other's can learn more about you.</HelpBlock>
+                        </div>
                     </Form>
                     <Link to="/profile"><Button bsSize="large" className="submit-signup" onClick={this.submitUserProfile} style={{marginTop: "1em", float: "right"}}>Submit</Button></Link>
         </div>
