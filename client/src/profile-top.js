@@ -112,7 +112,7 @@ class ProfileTop extends React.Component {
                     <h1 className="profile-name">{this.state.profile.name}</h1>
                     <h3 className="profile-town" style={grayed}>{this.state.profile.location.city}, {this.state.profile.location.state}</h3>
                     <Button className="connectButton" style={blueButton} bsStyle="large" onClick={()=>window.location.assign('mailto:'+this.state.email+'?subject=look at this website&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/')}>Connect</Button>
-                    <Button className="linkedinButton" bsStyle="large" onClick={()=>window.location.assign(this.state.linkedin)}>LinkedIn</Button>
+                    <Button className="linkedinButton" bsStyle="large" onClick={()=>window.location.assign(this.state.profile.linkedin)}>LinkedIn</Button>
                     {/* <hr/> */}
                 </div>
             </div>
